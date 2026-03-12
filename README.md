@@ -104,41 +104,45 @@
 ## 6. SQL Analysis  
  
 ## 7. Business Insights
-จดไว้ๆๆก่อน
-Does higher shipping cost lead to lower customer satisfaction?
-Electronics products generate the highest revenue but also experience longer delivery times.
+จดไว้ๆๆก่อน  
+Does higher shipping cost lead to lower customer satisfaction?  
+Electronics products generate the highest revenue but also experience longer delivery times.  
 
-20% of customers contribute over 60% of total revenue.
+20% of customers contribute over 60% of total revenue.  
 
--Sales
-Revenue grows strongly in Q4
--Product
-Electronics generates the highest revenue
--Customer
-Most customers come from São Paulo
--Delivery
-Late deliveries correlate with low review scores
--Seller
-Top 5 sellers generate 40% of revenue
+-Sales  
+Revenue grows strongly in Q4  
+-Product  
+Electronics generates the highest revenue  
+-Customer  
+Most customers come from São Paulo  
+-Delivery  
+Late deliveries correlate with low review scores  
+-Seller  
+Top 5 sellers generate 40% of revenue  
 
-## Dashboard layout
-Page 1 — Sales Overview
-       Total Revenue
-       Total Orders
-       Average Order Value
-       Monthly Revenue Trend
-Page 2 — Customer
-       Customer by state
-       Top customers
-       Repeat rate
-Page 3 — Product
-       Top product categories
-       Revenue by category
-Page 4 — Delivery & Review
-       Delivery time distribution
-       Review score distribution
-       Delivery vs review correlation
-## Jupyter Notebook
-   อธิบาย flow
+## Dashboard layout  
+Page 1 — Sales Overview  
+       Total Revenue  
+       Total Orders  
+       Average Order Value  
+       Monthly Revenue Trend  
+Page 2 — Customer  
+       Customer by state  
+       Top customers  
+       Repeat rate  
+Page 3 — Product  
+       Top product categories  
+       Revenue by category  
+Page 4 — Delivery & Review  
+       Delivery time distribution  
+       Review score distribution  
+       Delivery vs review correlation  
+## Jupyter Notebook  
+   อธิบาย flow....  
+
+
+
+   
 ## Reference
-dataset : https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce 
+dataset : https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce   
