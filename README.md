@@ -1,63 +1,66 @@
-#### E-commerce Sales Analysis ####
+                                          #### E-commerce Sales Analysis ####
 
 ## Prepaging project 
    onece before start the etl pipline please run below step to install all required libraries 
+   ```text
                             +----------------------------------------------------+
                             |             pip install -r requirements.txt        |
                             +----------------------------------------------------+
+ 
+   ``` 
+
      
 
 ## Architecture for ETL  
 
 
-                                                 +-------------+
-                                                 | Raw Dataset |
-                                                 +-------------+
-                                                        │
-                                                        ▼
-                                                 +-------------+
-                                                 |   Extract   |  (read csv,xlsx,json)
-                                                 +-------------+
-                                                        │
-                                                        ▼
-                                                 +-------------+
-                                                 |    Merge    |  (muli-transaction files)
-                                                 +-------------+
-                                                        │
-                                                        ▼
-                                                 +-------------+
-                                                 |  Transform  |  (clean data) 
-                                                 +-------------+
-                                                        │
-                                                        ▼
-                                                 +-------------+
-                                                 |  Bulk Load  |  (map data type)
-                                                 +-------------+
-                                                        │
-                                                        ▼
-                                                 +-------------+
-                                                 | SQL Server  | (staging tables)
-                                                 +-------------+
-                                                        │
-                                                        ▼
-                                                 +-------------+
-                                                 |  Dimension  |
-                                                 +-------------+
-                                                        │
-                                                        ▼
-                                                 +-------------+
-                                                 |     Fact    |
-                                                 +-------------+   
+              +-------------+
+              | Raw Dataset |
+              +-------------+
+                     │
+                     ▼
+              +-------------+
+              |   Extract   |  (read csv,xlsx,json)
+              +-------------+
+                     │
+                     ▼
+              +-------------+
+              |    Merge    |  (muli-transaction files)
+              +-------------+
+                     │
+                     ▼
+              +-------------+
+              |  Transform  |  (clean data) 
+              +-------------+
+                     │
+                     ▼
+              +-------------+
+              |  Bulk Load  |  (map data type)
+              +-------------+
+                     │
+                     ▼
+              +-------------+
+              | SQL Server  | (staging tables)
+              +-------------+
+                     │
+                     ▼
+              +-------------+
+              |  Dimension  |
+              +-------------+
+                     │
+                     ▼
+              +-------------+
+              |     Fact    |
+              +-------------+   
 
 
 ##Topics
 ## Business Problem
 ## Dataset
 
-## ER Diagram (Staging Table)  
+## ER Diagram (Staging Table)    
 
-                                          ![alt text](<diagrams/ER Diagram.png>)  
-
+   ![alt text](diagrams/ER%20Diagram.png)  
 
 
 ## Star Schema 
