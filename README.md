@@ -121,7 +121,8 @@ Late deliveries correlate with low review scores
 -Seller  
 Top 5 sellers generate 40% of revenue  
 
-## Dashboard layout  
+## Dashboard layout
+```text  
 Page 1 — Sales Overview  
        Total Revenue  
        Total Orders  
@@ -141,8 +142,8 @@ Page 4 — Delivery & Review
 ## Jupyter Notebook  
    อธิบาย flow....  
 
+```
 
 
-   
 ## Reference
 dataset : https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce   
