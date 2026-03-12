@@ -147,11 +147,19 @@ Page 4 — Delivery & Review
    อธิบาย flow.... 
      
 ## Data Dictionary
-       # table orders 
+       <!-- # table orders 
               |column|meaning| 
               |order_purchase_timestamp|ลูกค้ากดสั่งซื้อ|
               |order_approved_at|payment ได้รับการอนุมัติ|
               |order_delivered_carrier_date|ส่งให้บริษัทขนส่ง|
-              |order_delivered_customer_date|ลูกค้าได้รับของ|  
+              |order_delivered_customer_date|ลูกค้าได้รับของ|   -->
+       ### table: orders
+
+       | column | meaning |
+       |------|------|
+       | order_purchase_timestamp | Customer placed the order |
+       | order_approved_at | Payment approved |
+       | order_delivered_carrier_date | Order handed to carrier |
+       | order_delivered_customer_date | Customer received the order |
 ## Reference
 dataset : https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce   
