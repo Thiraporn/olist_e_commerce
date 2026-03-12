@@ -8,19 +8,17 @@
               +----------------------------------------------------+
  
    ``` 
+ 
 
-     
-
-## Architecture for ETL  
-
-
-              +-------------+
-              | Raw Dataset |
-              +-------------+
+<!-- ## Architecture for ETL 
+ ```text
+              +------------+
+              |   Raw Data |  (csv,xlsx,json) 
+              +------------+
                      │
                      ▼
               +-------------+
-              |   Extract   |  (read csv,xlsx,json)
+              |   Extract   | 
               +-------------+
                      │
                      ▼
@@ -42,16 +40,53 @@
               +-------------+
               | SQL Server  | (staging tables)
               +-------------+
+  ```    -->
+
+## Data Architecture Diagram  
+
+  ```text
+              +--------------+
+              |  Raw CSV     |
+              | (Olist Data) |
+              +--------------+
                      │
                      ▼
-              +-------------+
-              |  Dimension  |
-              +-------------+
+              +--------------+
+              |   Extract    |
+              |  Python ETL  |
+              +--------------+
                      │
                      ▼
-              +-------------+
-              |     Fact    |
-              +-------------+   
+              +--------------+
+              |   Transform  |
+              | Data Cleaning|
+              +--------------+
+                     │
+                     ▼
+              +--------------+
+              |  Staging DB  |
+              | SQL Server   |
+              +--------------+
+                     │
+                     ▼
+              +--------------+
+              | Data Warehouse|
+              |  Star Schema  |
+              +--------------+
+                     │
+                     ▼
+              +--------------+
+              | SQL Analysis |
+              +--------------+
+                     │
+                     ▼
+              +--------------+
+              |  Dashboard   |
+              | Power BI / BI|
+              +--------------+
+  ```   
+ 
+ 
 
 
 ## Topics
@@ -75,7 +110,35 @@ Electronics products generate the highest revenue but also experience longer del
 
 20% of customers contribute over 60% of total revenue.
 
+-Sales
+Revenue grows strongly in Q4
+-Product
+Electronics generates the highest revenue
+-Customer
+Most customers come from São Paulo
+-Delivery
+Late deliveries correlate with low review scores
+-Seller
+Top 5 sellers generate 40% of revenue
 
-
+## Dashboard layout
+Page 1 — Sales Overview
+       Total Revenue
+       Total Orders
+       Average Order Value
+       Monthly Revenue Trend
+Page 2 — Customer
+       Customer by state
+       Top customers
+       Repeat rate
+Page 3 — Product
+       Top product categories
+       Revenue by category
+Page 4 — Delivery & Review
+       Delivery time distribution
+       Review score distribution
+       Delivery vs review correlation
+## Jupyter Notebook
+   อธิบาย flow
 ## Reference
 dataset : https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce 
