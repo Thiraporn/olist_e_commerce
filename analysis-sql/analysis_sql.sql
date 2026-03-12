@@ -1,39 +1,4 @@
-﻿--SELECT * FROM INFORMATION_SCHEMA.TABLES  
---select count(*) from stg_customers_dataset                   ---99441 
---select count(*) from stg_geolocation_dataset                 ---1000163
---select count(*) from stg_orders_dataset                      ---99441
---select count(*) from stg_order_items_dataset                 ---112650
---select count(*) from stg_order_payments_dataset              ---103886
---select count(*) from stg_order_reviews_dataset               ---99224
---select count(*) from stg_products_dataset                    ---32951
---select count(*) from stg_product_category_name_translation   ---71
---select count(*) from stg_sellers_dataset                     ---3095
-
-
---select * from stg_customers_dataset                  
---select * from stg_geolocation_dataset                
---select * from stg_orders_dataset   where order_delivered_customer_date is null                  
---select * from stg_order_items_dataset                
---select * from stg_order_payments_dataset             
---select * from stg_order_reviews_dataset              
---select * from stg_products_dataset                   
---select * from stg_product_category_name_translation  
---select * from stg_sellers_dataset     
-
---drop table stg_customers_dataset                  
---drop table stg_geolocation_dataset                
---drop table stg_orders_dataset                     
---drop table stg_order_items_dataset                
---drop table stg_order_payments_dataset             
---drop table stg_order_reviews_dataset              
---drop table stg_products_dataset                   
---drop table stg_product_category_name_translation  
---drop table stg_sellers_dataset                    
-/*Business Questions*/
----count items  and sum total per orders group by customer  
-
-
-
+﻿--###################################################################### /*Business Questions*/ #####################################################################################################      
 --################ Sales Performance (ยอดขาย) #######################
 --1. What is the total revenue generated each month?   รายได้รวมของบริษัทต่อเดือนเป็นเท่าไร
 
@@ -85,3 +50,68 @@
 --เช่น
 
 --Does high shipping cost lead to lower review scores?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--###########################################################################################################################################################################
+--SELECT * FROM INFORMATION_SCHEMA.TABLES  
+--select count(*) from stg_customers_dataset                   ---99441 
+--select count(*) from stg_geolocation_dataset                 ---1000163
+--select count(*) from stg_orders_dataset                      ---99441
+--select count(*) from stg_order_items_dataset                 ---112650
+--select count(*) from stg_order_payments_dataset              ---103886
+--select count(*) from stg_order_reviews_dataset               ---99224
+--select count(*) from stg_products_dataset                    ---32951
+--select count(*) from stg_product_category_name_translation   ---71
+--select count(*) from stg_sellers_dataset                     ---3095
+
+
+--select * from stg_customers_dataset                  
+--select * from stg_geolocation_dataset                
+--select * from stg_orders_dataset   where order_delivered_customer_date is null                  
+--select * from stg_order_items_dataset                
+--select * from stg_order_payments_dataset             
+--select * from stg_order_reviews_dataset              
+--select * from stg_products_dataset                   
+--select * from stg_product_category_name_translation  
+--select * from stg_sellers_dataset     
+
+--drop table stg_customers_dataset                  
+--drop table stg_geolocation_dataset                
+--drop table stg_orders_dataset                     
+--drop table stg_order_items_dataset                
+--drop table stg_order_payments_dataset             
+--drop table stg_order_reviews_dataset              
+--drop table stg_products_dataset                   
+--drop table stg_product_category_name_translation  
+--drop table stg_sellers_dataset       
