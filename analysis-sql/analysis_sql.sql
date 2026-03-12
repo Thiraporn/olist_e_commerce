@@ -1,6 +1,12 @@
 ﻿--###################################################################### /*Business Questions*/ #####################################################################################################      
+--- Using data on staging table
 --################ Sales Performance (ยอดขาย) #######################
 --1. What is the total revenue generated each month?   รายได้รวมของบริษัทต่อเดือนเป็นเท่าไร
+   select * 
+   from stg_orders
+
+   select * 
+   from  stg_order_items 
 
 --2️. How does monthly revenue change over time (Month-over-Month growth)?  ยอดขายเติบโตหรือหดตัวเทียบกับเดือนก่อน (MoM Growth)
 
@@ -16,7 +22,7 @@
 --6️. How many unique customers have made purchases on the platform?  ลูกค้าทั้งหมดมีกี่คน และลูกค้าใหม่ต่อเดือนเท่าไร
 
 --7️. What percentage of customers are repeat customers?  ลูกค้าซื้อซ้ำ (Repeat Customers) มีกี่เปอร์เซ็นต์
-
+ 
 --8️. What is the average spending per customer (Customer Lifetime Value)?  ลูกค้าใช้เงินเฉลี่ยต่อคนเท่าไร (Customer Lifetime Value)
 
 --9️. Which cities or states have the highest number of customers? เมืองหรือรัฐไหนมีลูกค้ามากที่สุด
@@ -85,33 +91,33 @@
 
 --###########################################################################################################################################################################
 --SELECT * FROM INFORMATION_SCHEMA.TABLES  
---select count(*) from stg_customers_dataset                   ---99441 
---select count(*) from stg_geolocation_dataset                 ---1000163
---select count(*) from stg_orders_dataset                      ---99441
---select count(*) from stg_order_items_dataset                 ---112650
---select count(*) from stg_order_payments_dataset              ---103886
---select count(*) from stg_order_reviews_dataset               ---99224
---select count(*) from stg_products_dataset                    ---32951
+--select count(*) from stg_customers                   ---99441 
+--select count(*) from stg_geolocation                 ---1000163
+--select count(*) from stg_orders                      ---99441
+--select count(*) from stg_order_items                 ---112650
+--select count(*) from stg_order_payments              ---103886
+--select count(*) from stg_order_reviews               ---99224
+--select count(*) from stg_products                    ---32951
 --select count(*) from stg_product_category_name_translation   ---71
---select count(*) from stg_sellers_dataset                     ---3095
+--select count(*) from stg_sellers                     ---3095
 
 
---select * from stg_customers_dataset                  
---select * from stg_geolocation_dataset                
---select * from stg_orders_dataset   where order_delivered_customer_date is null                  
---select * from stg_order_items_dataset                
---select * from stg_order_payments_dataset             
---select * from stg_order_reviews_dataset              
---select * from stg_products_dataset                   
+--select * from stg_customers                  
+--select * from stg_geolocation                
+--select * from stg_orders   where order_delivered_customer_date is null                  
+--select * from stg_order_items                
+--select * from stg_order_payments             
+--select * from stg_order_reviews              
+--select * from stg_products                   
 --select * from stg_product_category_name_translation  
---select * from stg_sellers_dataset     
+--select * from stg_sellers     
 
---drop table stg_customers_dataset                  
---drop table stg_geolocation_dataset                
---drop table stg_orders_dataset                     
---drop table stg_order_items_dataset                
---drop table stg_order_payments_dataset             
---drop table stg_order_reviews_dataset              
---drop table stg_products_dataset                   
+--drop table stg_customers                  
+--drop table stg_geolocation                
+--drop table stg_orders                     
+--drop table stg_order_items                
+--drop table stg_order_payments             
+--drop table stg_order_reviews              
+--drop table stg_products                   
 --drop table stg_product_category_name_translation  
---drop table stg_sellers_dataset       
+--drop table stg_sellers       

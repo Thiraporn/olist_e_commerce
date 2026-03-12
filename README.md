@@ -139,11 +139,19 @@ Page 4 — Delivery & Review
        Delivery time distribution  
        Review score distribution  
        Delivery vs review correlation  
-## Jupyter Notebook  
-   อธิบาย flow....  
+ 
 
 ```
 
-
+## Jupyter Notebook  
+   อธิบาย flow.... 
+     
+## Data Dictionary
+       # table orders 
+              |column|meaning| 
+              |order_purchase_timestamp|ลูกค้ากดสั่งซื้อ|
+              |order_approved_at|payment ได้รับการอนุมัติ|
+              |order_delivered_carrier_date|ส่งให้บริษัทขนส่ง|
+              |order_delivered_customer_date|ลูกค้าได้รับของ|  
 ## Reference
 dataset : https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce   
