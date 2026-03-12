@@ -1,0 +1,17 @@
+# virtual environment
+.venv/
+venv/ 
+
+# vscode
+.vscode/ 
+
+# Python cache
+**/__pycache__/
+*.py[cod]
+
+# Test folder
+dataset/transactions/
+
+# drawio
+*.bkp
+$*
