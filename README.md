@@ -1,11 +1,11 @@
-                                          #### E-commerce Sales Analysis ####
+#### E-commerce Sales Analysis ####
 
-## Prepaging project 
+## Preparing project 
    onece before start the etl pipline please run below step to install all required libraries 
    ```text
-                            +----------------------------------------------------+
-                            |             pip install -r requirements.txt        |
-                            +----------------------------------------------------+
+              +----------------------------------------------------+
+              |             pip install -r requirements.txt        |
+              +----------------------------------------------------+
  
    ``` 
 
@@ -54,21 +54,21 @@
               +-------------+   
 
 
-##Topics
-## Business Problem
-## Dataset
+## Topics
+## 1. Business Problem
+## 2. Dataset
 
-## ER Diagram (Staging Table)    
+## 3. ER Diagram (Staging Table)    
 
    ![alt text](diagrams/ER%20Diagram.png)  
 
 
-## Star Schema 
+## 4. Star Schema 
   
-## Data Pipeline
-## SQL Analysis  
+## 5. Data Pipeline
+## 6. SQL Analysis  
  
-## Business Insights
+## 7. Business Insights
 จดไว้ๆๆก่อน
 Does higher shipping cost lead to lower customer satisfaction?
 Electronics products generate the highest revenue but also experience longer delivery times.
