@@ -121,6 +121,17 @@ Late deliveries correlate with low review scores
 -Seller  
 Top 5 sellers generate 40% of revenue  
 
+<!-- Key Insights
+
+1. Top 10 sellers generate ~X% of total revenue
+2. Average delivery time is X days
+3. Late delivery rate is X%
+4. States with longest delivery time: XX
+5. Shipping cost has slight negative relationship with review score
+6. Some product categories have lower customer satisfaction -->
+
+
+
 ## Dashboard layout
 ```text  
 Page 1 — Sales Overview  
