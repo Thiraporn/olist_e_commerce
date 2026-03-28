@@ -13,28 +13,7 @@
        
         
 </details>
-   
-## 📚 Topics
-
-<details>
-  <summary>ℹ️ Explore Topics</summary>
-
-  - 📌 Business Problem  
-  - 📊 Dataset  
-
-</details>
-
----
-
-## 🧩 ER Diagram (Staging Table)
-
-<details>
-  <summary>🚀 Click to expand ER Diagram</summary>
-
-  <img src="diagrams/ER%20Diagram.png" width="700"/>
-
-</details> 
- 
+  
 
 <!-- ## Architecture for ETL 
  ```text
@@ -114,14 +93,14 @@
               | Power BI / BI|
               +--------------+
     
-<details> 
+</details> 
 
  
  
 
-##  Topics
+##  📚Topics
 <details>
-      <summary>📚 Business</summary> 
+       
        1. Business Problem  
        2. Dataset   
 </details>
