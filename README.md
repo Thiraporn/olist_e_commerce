@@ -87,7 +87,40 @@
 
 ## 📌 SQL Analysis  
 <details>
-       ... 
+    <summary> 20 Business Questions</summary>
+    
+   ### 🟦 Sales Performance 
+     - 1. What is the total revenue generated each month?    
+     - 2️. How does monthly revenue change over time (Month-over-Month growth)?
+     - 3. Which product categories generate the highest revenue? 
+     - 4. What are the top 10 best-selling products by number of orders?  
+     - 5. What is the Average Order Value (AOV)?  
+    
+   ### 🟩 Customer Analytics  
+     - 6️. How many unique customers have made purchases on the platform?   
+     - 7️. What percentage of customers are repeat customers?   
+     - 8️. What is the average spending per customer (Customer Lifetime Value)?  
+     - 9️. Which cities or states have the highest number of customers?    
+     - 10.Do the top 20% of customers generate the majority of the revenue (Pareto analysis)?    
+     
+  ### 🟨  Delivery Performance
+     - 11. What is the average delivery time from purchase to delivery?
+     - 12️. What percentage of orders are delivered later than the estimated delivery date?   
+     - 13️. Which sellers have the fastest average delivery times? 
+     - 14. Which regions experience the longest delivery times?  
+     - 15️. What is the average shipping cost (freight value) per order?  
+
+ 
+
+  ### 🟥 Product & Seller Performance
+    - 16️. Which sellers generate the highest total revenue?   
+    - 17️. Which sellers receive the highest average customer review scores?  
+    - 18. Which product categories have the lowest customer satisfaction scores?  
+    - 19️. What is the average price of products in each category?    
+    - 20. Is there a relationship between shipping cost and customer review scores?  
+
+   
+
 </details>
  
 ## 🎯 Business Insights
