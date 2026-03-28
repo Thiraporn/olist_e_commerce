@@ -59,7 +59,10 @@
     
 </details> 
 
-  
+## ⭐ Star Schema 
+<details>
+       ... 
+</details>  
 
 ## 🧩 ER Diagram (Staging Table) 
 <details>
@@ -69,28 +72,25 @@
 
  
 
-##  📚Topics
+<!-- ##  🔖Topics
 <details>
       - 📌 Business Problem  
       - 📊 Dataset  
-</details>
+</details> -->
 
-## 4. Star Schema 
-<details>
-       ... 
-</details>
+
   
 ## 5. Data Pipeline
 <details>
        ... 
 </details>
 
-## 6. SQL Analysis  
+## 📌 SQL Analysis  
 <details>
        ... 
 </details>
  
-## 7. Business Insights
+## 🎯 Business Insights
 <details>
        จดไว้ๆๆก่อน  
        Does higher shipping cost lead to lower customer satisfaction?  
@@ -163,28 +163,24 @@ Dashboard layout
 </details>
  
 
-## Jupyter Notebook  
+## 📚 Jupyter Notebook  
 <details>
         อธิบาย flow....    
 </details>
   
      
-## Data Dictionary
-<details>
-        ... 
-</details>
-<!--
-|column|meaning|
-|order_purchase_timestamp|ลูกค้ากดสั่งซื้อ|
-|order_approved_at|payment ได้รับการอนุมัติ|
-|order_delivered_carrier_date|ส่งให้บริษัทขนส่ง|
-|order_delivered_customer_date|ลูกค้าได้รับของ|
--->
+## 🗺️Data Dictionary
+<details> 
 
+     <summary> ### table: orders  </summary>   
+       
+       |column|meaning|
+       |order_purchase_timestamp|ลูกค้ากดสั่งซื้อ|
+       |order_approved_at|payment ได้รับการอนุมัติ|
+       |order_delivered_carrier_date|ส่งให้บริษัทขนส่ง|
+       |order_delivered_customer_date|ลูกค้าได้รับของ|
+       
 
-
-### table: orders
-<details>
        | column | meaning |
        |------|------|
        | order_purchase_timestamp | Customer placed the order |
@@ -192,6 +188,14 @@ Dashboard layout
        | order_delivered_carrier_date | Order handed to carrier |
        | order_delivered_customer_date | Customer received the order |  
 
+</details>
+<!--
+|column|meaning|
+|order_purchase_timestamp|ลูกค้ากดสั่งซื้อ|
+|order_approved_at|payment ได้รับการอนุมัติ|
+|order_delivered_carrier_date|ส่งให้บริษัทขนส่ง|
+|order_delivered_customer_date|ลูกค้าได้รับของ|
+--> 
 
 ## 🛠 Tools & Technologies
 <details>
