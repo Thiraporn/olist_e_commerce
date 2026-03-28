@@ -140,12 +140,11 @@ due to the absence of logistics cost data.
 ❌ freight_value ≠ profit -->
 
 
-## 📊 Dashboard layout 
-Dashboard layout
+## 📊 Dashboard layout  
 <details>
-      <summary>  View ER Diagram  </summary> 
-       Page 1 — Sales Overview  
-              Total Revenue  
+      <summary>  View Dashboard  </summary> 
+       Page 1 — Sales Overview    
+              Total Revenue    
               Total Orders  
               Average Order Value  
               Monthly Revenue Trend  
@@ -159,7 +158,7 @@ Dashboard layout
        Page 4 — Delivery & Review  
               Delivery time distribution  
               Review score distribution  
-              Delivery vs review correlation   
+              Delivery vs review correlation  
 </details>
  
 
@@ -172,7 +171,7 @@ Dashboard layout
 ## 🗺️Data Dictionary
 <details> 
 
-     <summary> ### table: orders  </summary>   
+     <summary> table: orders  </summary>   
        
        |column|meaning|
        |order_purchase_timestamp|ลูกค้ากดสั่งซื้อ|
@@ -199,11 +198,11 @@ Dashboard layout
 
 ## 🛠 Tools & Technologies
 <details>
-       - SQL
-       - Python
+       - SQL  
+       - Python  
        - Pandas
-       - Data Modeling
-       - ETL Pipeline Design
+       - Data Modeling  
+       - ETL Pipeline Design  
 </details>
 
 ## 📈 Future Improvements
