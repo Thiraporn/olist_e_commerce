@@ -1,10 +1,8 @@
 #### E-commerce Sales Analysis ####
 
-## Preparing project 
-
-
+## 📦Preparing project 
 <details> 
-      <summary>📦 Install Dependencies</summary>    
+      <summary> Install Dependencies</summary>    
        onece before start the etl pipline please run below step to install all required libraries 
         
                      +----------------------------------------------------+
@@ -13,44 +11,11 @@
        
         
 </details>
-  
+   
 
-<!-- ## Architecture for ETL 
- ```text
-              +------------+
-              |   Raw Data |  (csv,xlsx,json) 
-              +------------+
-                     │
-                     ▼
-              +-------------+
-              |   Extract   | 
-              +-------------+
-                     │
-                     ▼
-              +-------------+
-              |    Merge    |  (muli-transaction files)
-              +-------------+
-                     │
-                     ▼
-              +-------------+
-              |  Transform  |  (clean data) 
-              +-------------+
-                     │
-                     ▼
-              +-------------+
-              |  Bulk Load  |  (map data type)
-              +-------------+
-                     │
-                     ▼
-              +-------------+
-              | SQL Server  | (staging tables)
-              +-------------+
-  ```    -->
-
-## Data Architecture Diagram 
-
-<summary>🚀 Run ETL Pipeline</summary>    
+## 🚀 Data Architecture Diagram  
 <details>
+       <summary> Run ETL Pipeline</summary>    
  
               +--------------+
               |  Raw CSV     |
@@ -94,7 +59,14 @@
     
 </details> 
 
- 
+  
+
+## 🧩 ER Diagram (Staging Table) 
+<details>
+  <summary> View ER Diagram</summary> 
+  <img src="diagrams/ER%20Diagram.png" width="700"/> 
+</details>
+
  
 
 ##  📚Topics
@@ -102,18 +74,6 @@
        1. Business Problem  
        2. Dataset   
 </details>
-
-
-
-
-
-## 🧩 ER Diagram (Staging Table)
-
-<details>
-  <summary>🚀 View ER Diagram</summary> 
-  ![ER Diagram](diagrams/ER%20Diagram.png) 
-</details>
-
 
 ## 4. Star Schema 
   
