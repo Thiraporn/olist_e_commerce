@@ -12,7 +12,7 @@
                      +----------------------------------------------------+
        
         
- 
+</details>
    
  
  
@@ -50,7 +50,7 @@
   ```    -->
 
 ## Data Architecture Diagram  
- 
+<details>
     <summary>🚀 Run ETL Pipeline</summary>    
  
               +--------------+
@@ -93,26 +93,25 @@
               | Power BI / BI|
               +--------------+
     
- 
+<details>
  
 ## Topics
- 
-    <summary>ℹ️ Data</summary>  
+
+<details>
+    <summary>ℹ️ ETL Pipeline</summary>  
      ## 1. Business Problem
      ## 2. Dataset  
     
- 
+<details>
 
  ## 3. ER Diagram (Staging Table) 
- 
+<details>
     <summary>🚀 ER Diagram  </summary>  
        ## 3. ER Diagram (Staging Table)    
 
        ![alt text](diagrams/ER%20Diagram.png)  
 
 <details>
-
-
 ## 4. Star Schema 
   
 ## 5. Data Pipeline
