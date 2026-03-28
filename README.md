@@ -1,5 +1,5 @@
-#### E-commerce Sales Analysis ####
-
+# E-commerce Sales Analysis 
+ ---
 ## 📦Preparing project 
 <details> 
       <summary> Install Dependencies</summary>    
@@ -246,14 +246,13 @@ due to the absence of logistics cost data.
 </details> 
  
 
-## 🛠 Tools & Technologies
-<details>
-      
-       - SQL
-       - Python
-       - Pandas
-       - Data Modeling 
-       - ETL Pipeline Design 
+## 🛠 Tech Stack
+<details> 
+       - 🛢️ SQL  
+       - 🐍 Python  
+       - 🐼 Pandas  
+       - 🧱 Data Modeling  
+       - ⚙️ ETL Pipeline  
      
 </details>
 
