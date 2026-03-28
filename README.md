@@ -5,7 +5,7 @@
 
 <details> 
    <summary>📦 Install Dependencies</summary>   
-       ## Preparing project 
+       
        onece before start the etl pipline please run below step to install all required libraries 
        ```text
                      +----------------------------------------------------+
