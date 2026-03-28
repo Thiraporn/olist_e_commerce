@@ -14,7 +14,26 @@
         
 </details>
    
- 
+## 📚 Topics
+
+<details>
+  <summary>ℹ️ Explore Topics</summary>
+
+  - 📌 Business Problem  
+  - 📊 Dataset  
+
+</details>
+
+---
+
+## 🧩 ER Diagram (Staging Table)
+
+<details>
+  <summary>🚀 Click to expand ER Diagram</summary>
+
+  <img src="diagrams/ER%20Diagram.png" width="700"/>
+
+</details> 
  
 
 <!-- ## Architecture for ETL 
@@ -49,7 +68,9 @@
               +-------------+
   ```    -->
 
-## Data Architecture Diagram  
+## Data Architecture Diagram 
+
+
 <details>
        <summary>🚀 Run ETL Pipeline</summary>    
  
@@ -93,64 +114,19 @@
               | Power BI / BI|
               +--------------+
     
-<details>
- 
-
-
 <details> 
-      <summary>🚀 Run ETL Pipeline</summary>    
+
  
-              +--------------+
-              |  Raw CSV     |
-              | (Olist Data) |
-              +--------------+
-                     │
-                     ▼
-              +--------------+
-              |   Extract    |
-              |  Python ETL  |
-              +--------------+
-                     │
-                     ▼
-              +--------------+
-              |   Transform  |
-              | Data Cleaning|
-              +--------------+
-                     │
-                     ▼
-              +--------------+
-              |  Staging DB  |
-              | SQL Server   |
-              +--------------+
-                     │
-                     ▼
-              +--------------+
-              | Data Warehouse|
-              |  Star Schema  |
-              +--------------+
-                     │
-                     ▼
-              +--------------+
-              | SQL Analysis |
-              +--------------+
-                     │
-                     ▼
-              +--------------+
-              |  Dashboard   |
-              | Power BI / BI|
-              +--------------+
-       
-        
-</details>
+ 
 
-
-## 📚 Topics
-
+##  Topics
 <details>
-      <summary>ℹ️ Business</summary> 
+      <summary>📚 Business</summary> 
        1. Business Problem  
        2. Dataset   
 </details>
+
+
 
 
 
