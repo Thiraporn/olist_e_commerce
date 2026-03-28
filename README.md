@@ -1,4 +1,9 @@
 # E-commerce Sales Analysis 
+  ## 📊 E-commerce Sales Analysis
+
+This project extends my SQL skills into real-world business analysis, focusing on how data can be used to generate actionable insights and support decision-making in an e-commerce environment.
+ 
+
  ---
 ## 📦Preparing project 
 <details> 
