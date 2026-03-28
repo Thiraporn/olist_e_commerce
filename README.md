@@ -217,8 +217,10 @@ due to the absence of logistics cost data.
      
 ## 🗺️Data Dictionary
 <details>  
-  <summary>📄 Table: orders</summary>
+  <summary>view Table </summary>
 
+  
+   ### 🟦 Table: orders
   | Column | Meaning (EN) | Meaning (TH) |
   |--------|-------------|--------------|
   | order_purchase_timestamp | Customer placed the order | ลูกค้ากดสั่งซื้อ |
@@ -226,11 +228,20 @@ due to the absence of logistics cost data.
   | order_delivered_carrier_date | Order handed to carrier | ส่งให้บริษัทขนส่ง |
   | order_delivered_customer_date | Customer received the order | ลูกค้าได้รับสินค้า |
 
-  <summary>📄 Table: order items</summary>
-
-  <summary>📄 Table: custormers</summary>
-
-  <summary>📄 Table: products</summary>
+   ### 🟦 Table: order_items
+  | Column | Meaning (EN) | Meaning (TH) |
+  |--------|-------------|--------------|
+  | order_purchase_timestamp | Customer placed the order | ลูกค้ากดสั่งซื้อ |
+  | order_approved_at | Payment approved | อนุมัติการชำระเงิน |
+  | order_delivered_carrier_date | Order handed to carrier | ส่งให้บริษัทขนส่ง |
+  | order_delivered_customer_date | Customer received the order | ลูกค้าได้รับสินค้า |
+ 
+  
+  ### 🟦 Table: custormers 
+  ### 🟦 Table: products 
+  ### 🟦 Table: .... 
+  ### 🟦 Table: .... 
+  ### 🟦 Table: .... 
 
 </details> 
  
