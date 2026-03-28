@@ -51,7 +51,8 @@
 
 ## Data Architecture Diagram  
 <details>
-  ```text
+    <summary>🚀 Run ETL Pipeline</summary>    
+ 
               +--------------+
               |  Raw CSV     |
               | (Olist Data) |
@@ -91,7 +92,7 @@
               |  Dashboard   |
               | Power BI / BI|
               +--------------+
-  ```   
+    
 <details>
  
 
