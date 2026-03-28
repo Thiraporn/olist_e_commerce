@@ -4,7 +4,7 @@
 
 
 <details> 
-     <summary>📦 Install Dependencies</summary>    
+      <summary>📦 Install Dependencies</summary>    
        onece before start the etl pipline please run below step to install all required libraries 
         
                      +----------------------------------------------------+
@@ -51,7 +51,7 @@
 
 ## Data Architecture Diagram  
 <details>
-    <summary>🚀 Run ETL Pipeline</summary>    
+       <summary>🚀 Run ETL Pipeline</summary>    
  
               +--------------+
               |  Raw CSV     |
@@ -99,22 +99,18 @@
 ## 📚 Topics
 
 <details>
-  <summary>ℹ️ Business</summary>
-
-  1. Business Problem  
-  2. Dataset  
-
+      <summary>ℹ️ Business</summary> 
+       1. Business Problem  
+       2. Dataset   
 </details>
 
----
+
 
 ## 🧩 ER Diagram (Staging Table)
 
 <details>
-  <summary>🚀 View ER Diagram</summary>
-
-  ![ER Diagram](diagrams/ER%20Diagram.png)
-
+  <summary>🚀 View ER Diagram</summary> 
+  ![ER Diagram](diagrams/ER%20Diagram.png) 
 </details>
 
 
