@@ -95,23 +95,25 @@
     
 <details>
  
-## Topics
 
+## Topics 
 <details>
     <summary>ℹ️ ETL Pipeline</summary>  
-     ## 1. Business Problem
-     ## 2. Dataset  
-    
+       1. Business Problem
+       2. Dataset   
 <details>
 
  ## 3. ER Diagram (Staging Table) 
+
 <details>
     <summary>🚀 ER Diagram  </summary>  
-       ## 3. ER Diagram (Staging Table)    
+       ER Diagram (Staging Table)    
 
        ![alt text](diagrams/ER%20Diagram.png)  
 
 <details>
+
+
 ## 4. Star Schema 
   
 ## 5. Data Pipeline
