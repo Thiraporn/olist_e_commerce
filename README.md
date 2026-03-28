@@ -13,49 +13,49 @@
 </details>
    
 
-## 🚀 Data Architecture Diagram  
+## 🏗️ Data Architecture Diagram  
 <details>
        <summary> Run ETL Pipeline</summary>    
- 
-              +--------------+
-              |  Raw CSV     |
-              | (Olist Data) |
-              +--------------+
-                     │
-                     ▼
-              +--------------+
-              |   Extract    |
-              |  Python ETL  |
-              +--------------+
-                     │
-                     ▼
-              +--------------+
-              |   Transform  |
-              | Data Cleaning|
-              +--------------+
-                     │
-                     ▼
-              +--------------+
-              |  Staging DB  |
-              | SQL Server   |
-              +--------------+
-                     │
-                     ▼
-              +--------------+
-              | Data Warehouse|
-              |  Star Schema  |
-              +--------------+
-                     │
-                     ▼
-              +--------------+
-              | SQL Analysis |
-              +--------------+
-                     │
-                     ▼
-              +--------------+
-              |  Dashboard   |
-              | Power BI / BI|
-              +--------------+
+              
+                            +--------------+
+                            |  Raw CSV     |
+                            | (Olist Data) |
+                            +--------------+
+                                   │
+                                   ▼
+                            +--------------+
+                            |   Extract    |
+                            |  Python ETL  |
+                            +--------------+
+                                   │
+                                   ▼
+                            +--------------+
+                            |   Transform  |
+                            | Data Cleaning|
+                            +--------------+
+                                   │
+                                   ▼
+                            +--------------+
+                            |  Staging DB  |
+                            | SQL Server   |
+                            +--------------+
+                                   │
+                                   ▼
+                            +--------------+
+                            | Data Warehouse|
+                            |  Star Schema  |
+                            +--------------+
+                                   │
+                                   ▼
+                            +--------------+
+                            | SQL Analysis |
+                            +--------------+
+                                   │
+                                   ▼
+                            +--------------+
+                            |  Dashboard   |
+                            | Power BI / BI|
+                            +--------------+
     
 </details> 
 
@@ -64,39 +64,52 @@
 ## 🧩 ER Diagram (Staging Table) 
 <details>
   <summary> View ER Diagram</summary> 
-  <img src="diagrams/ER%20Diagram.png" width="700"/> 
+     <img src="diagrams/ER%20Diagram.png" width="700"/> 
 </details>
 
  
 
 ##  📚Topics
 <details>
-       1. Business Problem  
-       2. Dataset   
+      - 📌 Business Problem  
+      - 📊 Dataset  
 </details>
 
 ## 4. Star Schema 
+<details>
+       ... 
+</details>
   
 ## 5. Data Pipeline
+<details>
+       ... 
+</details>
+
 ## 6. SQL Analysis  
+<details>
+       ... 
+</details>
  
 ## 7. Business Insights
-จดไว้ๆๆก่อน  
-Does higher shipping cost lead to lower customer satisfaction?  
-Electronics products generate the highest revenue but also experience longer delivery times.  
+<details>
+       จดไว้ๆๆก่อน  
+       Does higher shipping cost lead to lower customer satisfaction?  
+       Electronics products generate the highest revenue but also experience longer delivery times.  
 
-20% of customers contribute over 60% of total revenue.  
+       20% of customers contribute over 60% of total revenue.  
 
--Sales  
-Revenue grows strongly in Q4  
--Product  
-Electronics generates the highest revenue  
--Customer  
-Most customers come from São Paulo  
--Delivery  
-Late deliveries correlate with low review scores  
--Seller  
-Top 5 sellers generate 40% of revenue  
+       -Sales  
+       Revenue grows strongly in Q4  
+       -Product  
+       Electronics generates the highest revenue  
+       -Customer  
+       Most customers come from São Paulo  
+       -Delivery  
+       Late deliveries correlate with low review scores  
+       -Seller  
+       Top 5 sellers generate 40% of revenue  
+</details>
+
 
 <!-- Key Insights
 
@@ -127,32 +140,39 @@ due to the absence of logistics cost data.
 ❌ freight_value ≠ profit -->
 
 
-## Dashboard layout
-```text  
-Page 1 — Sales Overview  
-       Total Revenue  
-       Total Orders  
-       Average Order Value  
-       Monthly Revenue Trend  
-Page 2 — Customer  
-       Customer by state  
-       Top customers  
-       Repeat rate  
-Page 3 — Product  
-       Top product categories  
-       Revenue by category  
-Page 4 — Delivery & Review  
-       Delivery time distribution  
-       Review score distribution  
-       Delivery vs review correlation  
+## 📊 Dashboard layout 
+Dashboard layout
+<details>
+      <summary>  View ER Diagram  </summary> 
+       Page 1 — Sales Overview  
+              Total Revenue  
+              Total Orders  
+              Average Order Value  
+              Monthly Revenue Trend  
+       Page 2 — Customer  
+              Customer by state  
+              Top customers  
+              Repeat rate  
+       Page 3 — Product  
+              Top product categories  
+              Revenue by category  
+       Page 4 — Delivery & Review  
+              Delivery time distribution  
+              Review score distribution  
+              Delivery vs review correlation   
+</details>
  
 
-```
-
 ## Jupyter Notebook  
-   อธิบาย flow.... 
+<details>
+        อธิบาย flow....    
+</details>
+  
      
 ## Data Dictionary
+<details>
+        ... 
+</details>
 <!--
 |column|meaning|
 |order_purchase_timestamp|ลูกค้ากดสั่งซื้อ|
@@ -164,15 +184,33 @@ Page 4 — Delivery & Review
 
 
 ### table: orders
+<details>
+       | column | meaning |
+       |------|------|
+       | order_purchase_timestamp | Customer placed the order |
+       | order_approved_at | Payment approved |
+       | order_delivered_carrier_date | Order handed to carrier |
+       | order_delivered_customer_date | Customer received the order |  
 
-| column | meaning |
-|------|------|
-| order_purchase_timestamp | Customer placed the order |
-| order_approved_at | Payment approved |
-| order_delivered_carrier_date | Order handed to carrier |
-| order_delivered_customer_date | Customer received the order |  
 
+## 🛠 Tools & Technologies
+<details>
+       - SQL
+       - Python
+       - Pandas
+       - Data Modeling
+       - ETL Pipeline Design
+</details>
 
+## 📈 Future Improvements
+<details>
+      
+       - Build interactive dashboard (Power BI / Tableau)
+       - Add real shipping cost for accurate profit calculation
+       - Improve data validation pipeline
+</details>
 
-## Reference
-dataset : https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce   
+## 👤 Autor
+<details>
+   dataset : https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce   
+</details> 
