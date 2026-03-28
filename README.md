@@ -80,10 +80,10 @@
 
 
   
-## 5. Data Pipeline
+<!-- ##  Data Pipeline
 <details>
        ... 
-</details>
+</details> -->
 
 ## 📌 SQL Analysis  
 <details>
