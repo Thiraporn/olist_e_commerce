@@ -16,53 +16,48 @@
 ## 🏗️ Data Architecture Diagram  
 <details>
        <summary> Run ETL Pipeline</summary>    
-              
-                            +--------------+
-                            |  Raw CSV     |
-                            | (Olist Data) |
-                            +--------------+
-                                   │
-                                   ▼
-                            +--------------+
-                            |   Extract    |
-                            |  Python ETL  |
-                            +--------------+
-                                   │
-                                   ▼
-                            +--------------+
-                            |   Transform  |
-                            | Data Cleaning|
-                            +--------------+
-                                   │
-                                   ▼
-                            +--------------+
-                            |  Staging DB  |
-                            | SQL Server   |
-                            +--------------+
-                                   │
-                                   ▼
-                            +--------------+
-                            | Data Warehouse|
-                            |  Star Schema  |
-                            +--------------+
-                                   │
-                                   ▼
-                            +--------------+
-                            | SQL Analysis |
-                            +--------------+
-                                   │
-                                   ▼
-                            +--------------+
-                            |  Dashboard   |
-                            | Power BI / BI|
-                            +--------------+
+                            
+                                          +--------------+
+                                          |  Raw CSV     |
+                                          | (Olist Data) |
+                                          +--------------+
+                                                 │
+                                                 ▼
+                                          +--------------+
+                                          |   Extract    |
+                                          |  Python ETL  |
+                                          +--------------+
+                                                 │
+                                                 ▼
+                                          +--------------+
+                                          |   Transform  |
+                                          | Data Cleaning|
+                                          +--------------+
+                                                 │
+                                                 ▼
+                                          +--------------+
+                                          |  Staging DB  |
+                                          | SQL Server   |
+                                          +--------------+
+                                                 │
+                                                 ▼
+                                          +--------------+
+                                          | Data Warehouse|
+                                          |  Star Schema  |
+                                          +--------------+
+                                                 │
+                                                 ▼
+                                          +--------------+
+                                          | SQL Analysis |
+                                          +--------------+
+                                                 │
+                                                 ▼
+                                          +--------------+
+                                          |  Dashboard   |
+                                          | Power BI / BI|
+                                          +--------------+
     
 </details> 
-
-## ⭐ Star Schema 
-<details>
-       ... 
-</details>  
 
 ## 🧩 ER Diagram (Staging Table) 
 <details>
@@ -70,7 +65,12 @@
      <img src="diagrams/ER%20Diagram.png" width="700"/> 
 </details>
 
- 
+
+## ⭐ Star Schema 
+<details>
+       ... 
+</details>  
+
 
 <!-- ##  🔖Topics
 <details>
@@ -139,28 +139,42 @@ due to the absence of logistics cost data.
 ✔ freight_value = customer-paid shipping fee
 ❌ freight_value ≠ profit -->
 
-
-## 📊 Dashboard layout  
-<details>
-      <summary>  View Dashboard  </summary> 
-       Page 1 — Sales Overview    
-              Total Revenue    
-              Total Orders  
-              Average Order Value  
-              Monthly Revenue Trend  
-       Page 2 — Customer  
-              Customer by state  
-              Top customers  
-              Repeat rate  
-       Page 3 — Product  
-              Top product categories  
-              Revenue by category  
-       Page 4 — Delivery & Review  
-              Delivery time distribution  
-              Review score distribution  
-              Delivery vs review correlation  
-</details>
  
+
+## 📊 Dashboard Layout  
+
+<details>
+  <summary>📊 View Dashboard Structure</summary>
+
+  ### 🟦 Page 1 — Sales Overview
+  - Total Revenue  
+  - Total Orders  
+  - Average Order Value (AOV)  
+  - Monthly Revenue Trend  
+
+  💡 Focus: Overall business performance
+
+  ### 🟩 Page 2 — Customer Insights
+  - Customers by State  
+  - Top Customers  
+  - Repeat Purchase Rate  
+
+  💡 Focus: Customer behavior & retention
+
+  ### 🟨 Page 3 — Product Performance
+  - Top Product Categories  
+  - Revenue by Category  
+
+  💡 Focus: Product contribution to revenue
+
+  ### 🟥 Page 4 — Delivery & Reviews
+  - Delivery Time Distribution  
+  - Review Score Distribution  
+  - Delivery vs Review Correlation  
+
+  💡 Focus: Logistics impact on satisfaction
+
+</details> 
 
 ## 📚 Jupyter Notebook  
 <details>
@@ -184,11 +198,11 @@ due to the absence of logistics cost data.
 
 ## 🛠 Tools & Technologies
 <details>
-       - SQL  
-       - Python  
-       - Pandas
-       - Data Modeling  
-       - ETL Pipeline Design  
+       ### SQL  
+       ### Python  
+       ### Pandas
+       ### Data Modeling  
+       ### ETL Pipeline Design  
 </details>
 
 ## 📈 Future Improvements
