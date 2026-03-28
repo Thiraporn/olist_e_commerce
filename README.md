@@ -96,6 +96,54 @@
 <details>
  
 
+
+<details> 
+      <summary>🚀 Run ETL Pipeline</summary>    
+ 
+              +--------------+
+              |  Raw CSV     |
+              | (Olist Data) |
+              +--------------+
+                     │
+                     ▼
+              +--------------+
+              |   Extract    |
+              |  Python ETL  |
+              +--------------+
+                     │
+                     ▼
+              +--------------+
+              |   Transform  |
+              | Data Cleaning|
+              +--------------+
+                     │
+                     ▼
+              +--------------+
+              |  Staging DB  |
+              | SQL Server   |
+              +--------------+
+                     │
+                     ▼
+              +--------------+
+              | Data Warehouse|
+              |  Star Schema  |
+              +--------------+
+                     │
+                     ▼
+              +--------------+
+              | SQL Analysis |
+              +--------------+
+                     │
+                     ▼
+              +--------------+
+              |  Dashboard   |
+              | Power BI / BI|
+              +--------------+
+       
+        
+</details>
+
+
 ## 📚 Topics
 
 <details>
