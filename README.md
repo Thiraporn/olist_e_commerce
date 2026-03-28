@@ -1,6 +1,8 @@
 #### E-commerce Sales Analysis ####
 
 ## Preparing project 
+<details>
+  <summary>📦 Install Dependencies</summary> 
    onece before start the etl pipline please run below step to install all required libraries 
    ```text
               +----------------------------------------------------+
@@ -8,6 +10,11 @@
               +----------------------------------------------------+
  
    ``` 
+   
+</details>
+ 
+   
+ 
  
 
 <!-- ## Architecture for ETL 
@@ -130,6 +137,24 @@ Top 5 sellers generate 40% of revenue
 5. Shipping cost has slight negative relationship with review score
 6. Some product categories have lower customer satisfaction -->
 
+<!-- Boleto payments introduce a delay in revenue recognition 
+and have a higher drop-off rate compared to credit card payments, 
+which can impact both conversion rate and cash flow. 
+Brazil	       ไทย
+boleto	        QR payment / ใบแจ้งชำระ
+voucher	 coupon / ส่วนลด
+
+-->
+ 
+
+ <!-- ⚠️ Revenue Definition Note: "ตัวเลขนี้ represent ธุรกิจจริงไหม?"
+
+This analysis separates product revenue and shipping fees.
+Freight value is treated as a pass-through cost, not net profit,
+due to the absence of logistics cost data.
+✔ price = core revenue
+✔ freight_value = customer-paid shipping fee
+❌ freight_value ≠ profit -->
 
 
 ## Dashboard layout
