@@ -95,17 +95,22 @@
     
 <details>
  
-
-
 ## Topics
-## 1. Business Problem
-## 2. Dataset
+<details>
+    <summary>ℹ️ Data</summary>  
+     ## 1. Business Problem
+     ## 2. Dataset  
+    
+<details>
 
-## 3. ER Diagram (Staging Table)    
+ ## 3. ER Diagram (Staging Table) 
+<details>
+    <summary>🚀 ER Diagram  </summary>  
+       ## 3. ER Diagram (Staging Table)    
 
-   ![alt text](diagrams/ER%20Diagram.png)  
+       ![alt text](diagrams/ER%20Diagram.png)  
 
-
+<details>
 ## 4. Star Schema 
   
 ## 5. Data Pipeline
