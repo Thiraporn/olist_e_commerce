@@ -1,18 +1,19 @@
 #### E-commerce Sales Analysis ####
 
 ## Preparing project 
-<details>
-  <summary>📦 Install Dependencies</summary> 
-   onece before start the etl pipline please run below step to install all required libraries 
-   ```text
-              +----------------------------------------------------+
-              |             pip install -r requirements.txt        |
-              +----------------------------------------------------+
- 
-   ``` 
-   
+
+
+<details> 
+   <summary>📦 Install Dependencies</summary>   
+       ## Preparing project 
+       onece before start the etl pipline please run below step to install all required libraries 
+       ```text
+                     +----------------------------------------------------+
+                     |             pip install -r requirements.txt        |
+                     +----------------------------------------------------+
+       
+       ```  
 </details>
- 
    
  
  
