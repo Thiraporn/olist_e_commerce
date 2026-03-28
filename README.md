@@ -65,6 +65,12 @@
      <img src="diagrams/ER%20Diagram.png" width="700"/> 
 </details>
 
+## 🧩 Activity Diagram 
+<details>
+  <summary> View Diagram</summary> 
+     <img src="diagrams/Activity%20Diagram.png" width="700"/> 
+</details>
+
 
 ## ⭐ Star Schema 
 <details>
@@ -253,7 +259,8 @@ due to the absence of logistics cost data.
        - 🐍Python
        - 🐼Pandas
        - 🧱Data Modeling 
-       - 🔄 ETL Pipeline Design 
+       - 🔄ETL Pipeline Design 
+       - 📊PowerBI
 
      
 </details>
