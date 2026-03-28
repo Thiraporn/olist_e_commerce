@@ -49,9 +49,8 @@
 
 ## Data Architecture Diagram 
 
-
+<summary>🚀 Run ETL Pipeline</summary>    
 <details>
-       <summary>🚀 Run ETL Pipeline</summary>    
  
               +--------------+
               |  Raw CSV     |
@@ -100,7 +99,6 @@
 
 ##  📚Topics
 <details>
-       
        1. Business Problem  
        2. Dataset   
 </details>
