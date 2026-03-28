@@ -50,7 +50,7 @@
   ```    -->
 
 ## Data Architecture Diagram  
-
+<details>
   ```text
               +--------------+
               |  Raw CSV     |
@@ -92,7 +92,7 @@
               | Power BI / BI|
               +--------------+
   ```   
- 
+<details>
  
 
 
