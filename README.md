@@ -1,7 +1,7 @@
 # E-commerce Sales Analysis 
   ## 📊 E-commerce Sales Analysis
-
-This project extends my SQL skills into real-world business analysis, focusing on how data can be used to generate actionable insights and support decision-making in an e-commerce environment.
+ 
+This project builds on my SQL skills and applies them to real-world business analysis, focusing on transforming data into meaningful insights that support data-driven decision-making in an e-commerce environment.
  
 
  ---
@@ -276,6 +276,7 @@ due to the absence of logistics cost data.
        - Build interactive dashboard (Power BI / Tableau)
        - Add real shipping cost for accurate profit calculation
        - Improve data validation pipeline
+       - Improve data story telling/Presentation Skill
 </details>
 
 ## 🛢️ Dataset
