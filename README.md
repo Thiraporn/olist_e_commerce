@@ -198,11 +198,13 @@ due to the absence of logistics cost data.
 
 ## 🛠 Tools & Technologies
 <details>
-       ### SQL  
-       ### Python  
-       ### Pandas
-       ### Data Modeling  
-       ### ETL Pipeline Design  
+      
+       - SQL
+       - Python
+       - Pandas
+       - Data Modeling 
+       - ETL Pipeline Design 
+     
 </details>
 
 ## 📈 Future Improvements
@@ -213,7 +215,7 @@ due to the absence of logistics cost data.
        - Improve data validation pipeline
 </details>
 
-## 👤 Autor
+## 📁 Dataset
 <details>
-   dataset : https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce   
+   Reference : https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce   
 </details> 
