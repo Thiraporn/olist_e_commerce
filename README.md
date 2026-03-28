@@ -247,12 +247,14 @@ due to the absence of logistics cost data.
  
 
 ## 🛠 Tech Stack
-<details> 
-       - 🛢️ SQL  
-       - 🐍 Python  
-       - 🐼 Pandas  
-       - 🧱 Data Modeling  
-       - ⚙️ ETL Pipeline  
+<details>
+      
+       - 🛢️SQL
+       - 🐍Python
+       - 🐼Pandas
+       - 🧱Data Modeling 
+       - 🔄 ETL Pipeline Design 
+
      
 </details>
 
