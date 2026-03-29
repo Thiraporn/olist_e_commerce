@@ -194,7 +194,8 @@ due to the absence of logistics cost data.
   - Total Orders  
   - Average Order Value (AOV)  
   - Monthly Revenue Trend  
-
+    <img src="dashboard/sales_overview.png" width="700"/>  
+    
   💡 Focus: Overall business performance
 
   ### 🟩 Page 2 — Customer Insights
@@ -225,7 +226,7 @@ due to the absence of logistics cost data.
 </details>
   
      
-## 🗺️Data Dictionary
+<!-- ## 🗺️Data Dictionary
 <details>  
   <summary>view Table </summary>
 
@@ -253,7 +254,7 @@ due to the absence of logistics cost data.
   ### 🟦 Table: .... 
   ### 🟦 Table: .... 
 
-</details> 
+</details>  -->
  
 
 ## 🛠 Tech Stack
@@ -274,7 +275,9 @@ due to the absence of logistics cost data.
       
        - Build interactive dashboard (Power BI / Tableau)
        - Add real shipping cost for accurate profit calculation
+       - Add star schema
        - Improve data validation pipeline
+       - Improve cleansing and transaform data
        - Improve data story telling/Presentation Skill
 </details>
 
