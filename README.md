@@ -278,7 +278,7 @@ due to the absence of logistics cost data.
 
 ## 🛢️ Dataset
 <details>
-I would like to thank  <a href="https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce" target="_blank">Olist</a>
-for releasing this version of the Brazilian e-commerce dataset.  
-   
+       I would like to thank  <a href="https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce" target="_blank">Olist</a> 🥰🤗
+       for releasing this version of the Brazilian e-commerce dataset.  
+       
 </details> 
