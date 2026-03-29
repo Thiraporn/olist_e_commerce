@@ -46,12 +46,6 @@ This project builds on my SQL skills and applies them to real-world business ana
                                                  │
                                                  ▼
                                           +--------------+
-                                          | Data Warehouse|
-                                          |  Star Schema  |
-                                          +--------------+
-                                                 │
-                                                 ▼
-                                          +--------------+
                                           | SQL Analysis |
                                           +--------------+
                                                  │
