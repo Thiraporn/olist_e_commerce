@@ -76,10 +76,10 @@ This project builds on my SQL skills and applies them to real-world business ana
 </details>
 
 
-## ⭐ Star Schema 
+<!-- ## ⭐ Star Schema 
 <details>
        ... 
-</details>  
+</details>   -->
 
 
 <!-- ##  🔖Topics
@@ -194,7 +194,7 @@ due to the absence of logistics cost data.
   - Total Orders  
   - Average Order Value (AOV)  
   - Monthly Revenue Trend  
-  
+
     <img src="dashboard/sales_overview.png" width="700"/>  
 
   💡 Focus: Overall business performance
