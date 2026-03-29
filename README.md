@@ -194,8 +194,9 @@ due to the absence of logistics cost data.
   - Total Orders  
   - Average Order Value (AOV)  
   - Monthly Revenue Trend  
+  
     <img src="dashboard/sales_overview.png" width="700"/>  
-    
+
   💡 Focus: Overall business performance
 
   ### 🟩 Page 2 — Customer Insights
