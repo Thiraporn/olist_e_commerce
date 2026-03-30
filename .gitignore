@@ -15,3 +15,6 @@ dataset/transactions/
 # drawio
 *.bkp
 $*
+
+# backup files
+dashboard/dashboard copy.pbix

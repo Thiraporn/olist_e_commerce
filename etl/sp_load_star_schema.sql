@@ -64,7 +64,9 @@ BEGIN
             customer_city VARCHAR(50),
             total_revenue_by_orderitems DECIMAL(18,2), 
             total_revenue_by_payment DECIMAL(18,2),
-            customer_segment VARCHAR(50)    
+            customer_segment VARCHAR(50) ,
+            customer_rank INT
+               
         );
     END
 
@@ -124,7 +126,7 @@ BEGIN
     PRINT 'Populating dim_customers...'+ CHAR(13) + CHAR(10);;
     -- 3. Populate dim_customers
     INSERT INTO dim_customers (customer_id, customer_unique_id, customer_state, customer_city
-                 , total_revenue_by_orderitems, total_revenue_by_payment, customer_segment)
+                 , total_revenue_by_orderitems, total_revenue_by_payment, customer_segment,customer_rank)
     SELECT 
         c.customer_id,
         c.customer_unique_id,
@@ -136,7 +138,8 @@ BEGIN
             WHEN ISNULL(o.total_payment_value,0) < 1000 THEN 'Low Value'
             WHEN ISNULL(o.total_payment_value,0) BETWEEN 1000 AND 5000 THEN 'Medium Value'
             ELSE 'High Value'
-        END AS customer_segment
+        END AS customer_segment,
+        RANK() OVER (ORDER BY  total_payment_value DESC) AS customer_rank
     FROM stg_customers c
     LEFT JOIN (
         SELECT 

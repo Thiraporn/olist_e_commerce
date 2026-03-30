@@ -280,7 +280,7 @@ due to the absence of logistics cost data.
       
        - Build interactive dashboard (Power BI / Tableau)
        - Add real shipping cost for accurate profit calculation
-       - Add star schema
+       - Improve data model/star schema
        - Improve data validation pipeline
        - Improve cleansing and transaform data
        - Improve data story telling/Presentation Skill
