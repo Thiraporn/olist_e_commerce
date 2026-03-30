@@ -46,6 +46,11 @@ This project builds on my SQL skills and applies them to real-world business ana
                                                  │
                                                  ▼
                                           +--------------+
+                                          | Star Schema  |
+                                          +--------------+
+                                                 │
+                                                 ▼
+                                          +--------------+
                                           | SQL Analysis |
                                           +--------------+
                                                  │
@@ -70,10 +75,11 @@ This project builds on my SQL skills and applies them to real-world business ana
 </details>
 
 
-<!-- ## ⭐ Star Schema 
+## ⭐ Star Schema 
 <details>
-       ... 
-</details>   -->
+     <summary> View Diagram</summary> 
+     <img src="diagrams/StarSchema.png" width="700"/> 
+</details>  
 
 
 <!-- ##  🔖Topics
@@ -197,6 +203,10 @@ due to the absence of logistics cost data.
   - Customers by State  
   - Top Customers  
   - Repeat Purchase Rate  
+    ค่าใกล้ 1 → ลูกค้าส่วนใหญ่ซื้อครั้งเดียว
+    Revenue is highly distributed across customers, with the top 10 customers contributing less than 1% of total revenue.
+
+    The analysis shows that revenue is widely distributed across customers, with minimal contribution from top customers. Customer behavior is dominated by one-time purchases, indicating low retention. Growth opportunities lie in improving customer loyalty and increasing average order value.
 
   💡 Focus: Customer behavior & retention
 

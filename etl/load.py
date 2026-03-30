@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine, text
 from sqlalchemy.types import BigInteger, Boolean, Float, Text, DateTime
-import shutil
+from pathlib import Path
 import config.database_config as config
 from utils.logging import logger
 import pandas as pd
@@ -72,5 +72,52 @@ def map_dtype(df):
         else:
             dtype_map[col] = Text()
     return dtype_map
+
+
+def load_data_star_schema():
+    """
+    Run the sp_load_star_schema stored procedure.
+    If it doesn't exist, drop & create from SQL file.
+    """
+    sp_file_path = Path("etl/sp_load_star_schema.sql")
+
+    if not sp_file_path.exists():
+        print(f"SQL file not found: {sp_file_path}")
+        return
+
+    # read SP SQL
+    with open(sp_file_path, "r", encoding="utf-8") as f:
+        sp_sql = f.read()
+
+    # Remove any GO statements (pyodbc ไม่รู้จัก)
+    sp_sql = "\n".join([line for line in sp_sql.splitlines()
+                        if line.strip().upper() != "GO"])
+
+    with engine.begin() as conn:
+        # Ensure correct database
+        conn.execute(text(f"USE {config.DB_NAME}"))
+
+        # 1. Drop SP if exists
+        drop_sql = """
+            IF OBJECT_ID('sp_load_star_schema', 'P') IS NOT NULL
+                DROP PROCEDURE sp_load_star_schema;
+            """
+        logger.info("Dropping existing SP if exists...")
+        conn.execute(text(drop_sql))
+
+        # 2. Create SP
+        logger.info("Creating SP...")
+        conn.execute(text(sp_sql))
+
+        # 3. Execute SP
+        logger.info("Executing SP...")
+        conn.execute(text("EXEC sp_load_star_schema"))
+
+        logger.info("SP executed successfully!")
+
+# Example call
+# if __name__ == "__main__":
+#     run_star_schema_sp()
+
 # test
 # py -m etl.load

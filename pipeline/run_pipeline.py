@@ -1,6 +1,6 @@
 from etl.extract import extract_data, merge_file
 from etl.transform import transform_data
-from etl.load import load_data
+from etl.load import load_data, load_data_star_schema
 from utils.logging import logger
 import config.database_config as config
 from pathlib import Path
@@ -37,6 +37,9 @@ def run_pipeline():
     # load data to DB
     load_data(data)
     logger.info("Load completed")
+
+    # load data to star schema
+    load_data_star_schema()
 
     logger.info("................")
     logger.info("End ETL.......")
