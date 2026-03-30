@@ -133,7 +133,7 @@ This project builds on my SQL skills and applies them to real-world business ana
 
 </details>
  
-## 🎯 Business Insights
+<!-- ## 🎯 Business Insights
 <details>
        จดไว้ๆๆก่อน  
        Does higher shipping cost lead to lower customer satisfaction?  
@@ -151,7 +151,7 @@ This project builds on my SQL skills and applies them to real-world business ana
        Late deliveries correlate with low review scores  
        -Seller  
        Top 5 sellers generate 40% of revenue  
-</details>
+</details> -->
 
 
 <!-- Key Insights
@@ -184,7 +184,7 @@ due to the absence of logistics cost data.
 
  
 
-## 📊 Dashboard Layout  
+<!-- ## 📊 Dashboard Layout  
 
 <details>
   <summary>📊 View Dashboard Structure</summary>
@@ -223,12 +223,37 @@ due to the absence of logistics cost data.
 
   💡 Focus: Logistics impact on satisfaction
 
+</details>  -->
+## 📊 Dashboard Layout  
+
+<details>
+  <summary>📊 View Dashboard Structure</summary>
+
+  ### 🟦 Page 1 — Sales Overview
+  - Total Revenue  
+  - Total Orders  
+  - Average Order Value (AOV)  
+  - Monthly Revenue Trend  
+
+    <img src="dashboard/sales_overview.png" width="700"/>  
+
+  💡 Focus: Overall business performance
+
+  ### 🟩 Page 2 — Customer Insights
+      In progress.......
+
+  ### 🟨 Page 3 — Product Performance
+      In progress.......
+
+  ### 🟥 Page 4 — Delivery & Reviews
+      In progress.......
+
 </details> 
 
-## 📚 Jupyter Notebook  
+<!-- ## 📚 Jupyter Notebook  
 <details>
         อธิบาย flow....    
-</details>
+</details> -->
   
      
 <!-- ## 🗺️Data Dictionary
@@ -279,7 +304,7 @@ due to the absence of logistics cost data.
 <details>
       
        - Build interactive dashboard (Power BI / Tableau)
-       - Add real shipping cost for accurate profit calculation
+       - Add Jupyter Notebook 
        - Improve data model/star schema
        - Improve data validation pipeline
        - Improve cleansing and transaform data
