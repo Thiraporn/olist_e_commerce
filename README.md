@@ -250,6 +250,7 @@ due to the absence of logistics cost data.
    - Customers display two main behaviors , followed by Many orders, lower revenue per order (frequent buyers) , Fewer orders, higher revenue per order (big spenders).Use order and revenue patterns to design targeted promotions and improve customer engagement.
 
   ### 🟨 Page 3 — Product Performance
+  
     <img src="dashboard/product_performance.png" width="700"/> 
    
    🛒 Key Insights
