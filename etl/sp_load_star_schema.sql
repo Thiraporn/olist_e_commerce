@@ -1,52 +1,54 @@
+ 
+
 CREATE PROCEDURE sp_load_star_schema
 AS
 BEGIN
     SET NOCOUNT ON;
 
-    -- 0. Truncate Tables before Insert
+    -- 0. TRUNCATE Tables before Insert
     IF OBJECT_ID('fact_sales', 'U') IS NOT NULL
 	BEGIN
-	    PRINT 'Truncating fact_sales...'+ CHAR(13) + CHAR(10);;
+	    PRINT 'Truncating fact_sales...'+ CHAR(13) + CHAR(10);
 	    TRUNCATE TABLE fact_sales;
 	END
 	ELSE
 	BEGIN
-	    PRINT 'fact_sales does not exist.'+ CHAR(13) + CHAR(10);;
+	    PRINT 'fact_sales does not exist.'+ CHAR(13) + CHAR(10);
 	END
 	
 	IF OBJECT_ID('dim_sellers', 'U') IS NOT NULL
 	BEGIN
-	    PRINT 'Truncating dim_sellers...'+ CHAR(13) + CHAR(10);;
+	    PRINT 'Truncating dim_sellers...'+ CHAR(13) + CHAR(10);
 	    TRUNCATE TABLE dim_sellers;
 	END
 	ELSE
 	BEGIN
-	    PRINT 'dim_sellers does not exist.'+ CHAR(13) + CHAR(10);;
+	    PRINT 'dim_sellers does not exist.'+ CHAR(13) + CHAR(10);
 	END
 	
 	IF OBJECT_ID('dim_customers', 'U') IS NOT NULL
 	BEGIN
-	    PRINT 'Truncating dim_customers...'+ CHAR(13) + CHAR(10);;
+	    PRINT 'Truncating dim_customers...'+ CHAR(13) + CHAR(10);
 	    TRUNCATE TABLE dim_customers;
 	END
 	ELSE
 	BEGIN
-	    PRINT 'dim_customers does not exist.'+ CHAR(13) + CHAR(10);;
+	    PRINT 'dim_customers does not exist.'+ CHAR(13) + CHAR(10);
 	END
 	
 	IF OBJECT_ID('dim_products', 'U') IS NOT NULL
 	BEGIN
-	    PRINT 'Truncating dim_products...'+ CHAR(13) + CHAR(10);;
+	    PRINT 'Truncating dim_products...'+ CHAR(13) + CHAR(10);
 	    TRUNCATE TABLE dim_products;
 	END
 	ELSE
 	BEGIN
-	    PRINT 'dim_products does not exist.'+ CHAR(13) + CHAR(10);;
+	    PRINT 'dim_products does not exist.'+ CHAR(13) + CHAR(10);
 	END
 	
 	IF OBJECT_ID('dim_date', 'U') IS NOT NULL
 	BEGIN
-	    PRINT 'Truncating dim_date...'+ CHAR(13) + CHAR(10);;
+	    PRINT 'Truncating dim_date...'+ CHAR(13) + CHAR(10);
 	    TRUNCATE TABLE dim_date;
 	END
 	ELSE
@@ -63,9 +65,11 @@ BEGIN
             customer_state VARCHAR(50),
             customer_city VARCHAR(50),
             total_revenue_by_orderitems DECIMAL(18,2), 
-            total_revenue_by_payment DECIMAL(18,2),
+            --total_revenue_by_payment DECIMAL(18,2),
             customer_segment VARCHAR(50) ,
-            customer_rank INT
+            customer_rank INT--,
+            --cum_revenue DECIMAL(18,2),
+            --cumulative_revenue_pct DECIMAL(5,4)
                
         );
     END
@@ -115,6 +119,7 @@ BEGIN
             customer_id VARCHAR(50) NOT NULL,
             product_id VARCHAR(50) NOT NULL,
             order_date_id INT  NULL,
+            order_date DATE NULL, 
             price DECIMAL(18,2),
             delivery_fee DECIMAL(18,2),
             revenue DECIMAL(18,2),
@@ -123,39 +128,41 @@ BEGIN
             on_time INT
         );
     END
-    PRINT 'Populating dim_customers...'+ CHAR(13) + CHAR(10);;
+    PRINT 'Populating dim_customers...'+ CHAR(13) + CHAR(10);
     -- 3. Populate dim_customers
     INSERT INTO dim_customers (customer_id, customer_unique_id, customer_state, customer_city
-                 , total_revenue_by_orderitems, total_revenue_by_payment, customer_segment,customer_rank)
+                 , total_revenue_by_orderitems
+                 , customer_segment,customer_rank )--,cum_revenue , cumulative_revenue_pct
     SELECT 
         c.customer_id,
         c.customer_unique_id,
         c.customer_state,
         c.customer_city,
         ISNULL(o.total_order_value,0) AS total_revenue_by_orderitems,
-        ISNULL(o.total_payment_value,0) AS total_revenue_by_payment,
+        --ISNULL(o.total_payment_value,0) AS total_revenue_by_payment,
         CASE 
-            WHEN ISNULL(o.total_payment_value,0) < 1000 THEN 'Low Value'
-            WHEN ISNULL(o.total_payment_value,0) BETWEEN 1000 AND 5000 THEN 'Medium Value'
+            WHEN ISNULL(o.total_order_value,0) < 1000 THEN 'Low Value'
+            WHEN ISNULL(o.total_order_value,0) BETWEEN 1000 AND 5000 THEN 'Medium Value'
             ELSE 'High Value'
         END AS customer_segment,
-        RANK() OVER (ORDER BY  total_payment_value DESC) AS customer_rank
+        RANK() OVER (ORDER BY  total_order_value DESC) AS customer_rank,
+        --,0 cum_revenue , 0 cumulative_revenue_pct 
     FROM stg_customers c
     LEFT JOIN (
         SELECT 
             so.customer_id,
-            SUM(soi.price + soi.freight_value) AS total_order_value,
-            SUM(sp.payment_value) AS total_payment_value
+            SUM(soi.price + soi.freight_value) AS total_order_value 
+            --SUM(sp.payment_value) AS total_payment_value
 	        FROM stg_orders so
 	        JOIN stg_order_items soi ON so.order_id = soi.order_id
-	        LEFT JOIN stg_order_payments sp ON so.order_id = sp.order_id
+	        --LEFT JOIN stg_order_payments sp ON so.order_id = sp.order_id
 	        WHERE so.order_approved_at IS NOT NULL
 	        GROUP BY so.customer_id
     ) o ON c.customer_id = o.customer_id 
     WHERE NOT EXISTS(  SELECT 1 FROM dim_customers dc WHERE dc.customer_id = c.customer_id );
     
     
-    PRINT 'Populating dim_products...'+ CHAR(13) + CHAR(10);;
+    PRINT 'Populating dim_products...'+ CHAR(13) + CHAR(10);
     -- 4. Populate dim_products
     INSERT INTO dim_products (product_id, product_category_name, product_category_name_english)
     SELECT DISTINCT
@@ -165,32 +172,32 @@ BEGIN
     FROM stg_products p
     LEFT JOIN stg_product_category_name_translation t ON p.product_category_name = t.product_category_name;
     
-    PRINT 'Populating dim_date...'+ CHAR(13) + CHAR(10);;
+    PRINT 'Populating dim_date...'+ CHAR(13) + CHAR(10);
     -- 5. Populate dim_date
     INSERT INTO dim_date (date_id, date, year, month, year_month, day, week_of_year, month_name, quarter, is_weekend)
     SELECT DISTINCT
-        CAST(FORMAT(order_purchase_timestamp,'yyyyMMdd') AS INT) AS date_id,
-        CAST(order_purchase_timestamp AS DATE) AS date,
-        YEAR(order_purchase_timestamp) AS year,
-        MONTH(order_purchase_timestamp) AS month,
-        FORMAT(order_purchase_timestamp,'yyyyMM') AS year_month,
-        DAY(order_purchase_timestamp) AS day,
-        DATEPART(week, order_purchase_timestamp) AS week_of_year,
-        DATENAME(month, order_purchase_timestamp) AS month_name,
-        DATEPART(quarter, order_purchase_timestamp) AS quarter,
-        CASE WHEN DATENAME(weekday, order_purchase_timestamp) IN ('Saturday','Sunday') THEN 1 ELSE 0 END AS is_weekend
+        CAST(FORMAT(COALESCE(order_approved_at, order_purchase_timestamp) ,'yyyyMMdd') AS INT) AS date_id,
+        CAST(COALESCE(order_approved_at, order_purchase_timestamp)  AS DATE) AS date,
+        YEAR(COALESCE(order_approved_at,  order_purchase_timestamp) ) AS year,
+        MONTH(COALESCE(order_approved_at, order_purchase_timestamp) ) AS month,
+        FORMAT(COALESCE(order_approved_at, order_purchase_timestamp) ,'yyyyMM') AS year_month,
+        DAY(COALESCE(order_approved_at, order_purchase_timestamp) ) AS day,
+        DATEPART(week, COALESCE(order_approved_at, order_purchase_timestamp) ) AS week_of_year,
+        DATENAME(month, COALESCE(order_approved_at, order_purchase_timestamp) ) AS month_name,
+        DATEPART(quarter, COALESCE(order_approved_at, order_purchase_timestamp) ) AS quarter,
+        CASE WHEN DATENAME(weekday, COALESCE(order_approved_at, order_purchase_timestamp) ) IN ('Saturday','Sunday') THEN 1 ELSE 0 END AS is_weekend
     FROM stg_orders;
     
-    PRINT 'Populating dim_sellers...'+ CHAR(13) + CHAR(10);;
+    PRINT 'Populating dim_sellers...'+ CHAR(13) + CHAR(10);
     -- 6. Populate dim_sellers
     INSERT INTO dim_sellers (seller_id, seller_city, seller_state)
     SELECT DISTINCT seller_id, seller_city, seller_state
     FROM stg_sellers;
     
-    PRINT 'Populating fact_sales...'+ CHAR(13) + CHAR(10);;
+    PRINT 'Populating fact_sales...'+ CHAR(13) + CHAR(10);
     -- 7. Populate fact_sales
     INSERT INTO fact_sales (
-        sales_id, order_id, order_item_id, seller_id, customer_id, product_id, order_date_id,
+        sales_id, order_id, order_item_id, seller_id, customer_id, product_id, order_date_id,order_date,
         price, delivery_fee, revenue, estimated_delivery_days, delivery_time_days, on_time
     )
     SELECT 
@@ -200,7 +207,9 @@ BEGIN
         oi.seller_id,
         o.customer_id,
         oi.product_id,
-        CAST(FORMAT(o.order_approved_at,'yyyyMMdd') AS INT) AS order_date_id,
+        --CAST(FORMAT(o.order_approved_at,'yyyyMMdd') AS INT) AS order_date_id,
+        CAST(CONVERT(VARCHAR(8),   COALESCE(o.order_approved_at, o.order_purchase_timestamp), 112 ) AS INT) AS order_date_id,
+        CAST(COALESCE(o.order_approved_at, o.order_purchase_timestamp) AS DATE) AS order_date,
         oi.price,
         oi.freight_value AS delivery_fee,
         oi.price + oi.freight_value AS revenue,
@@ -209,4 +218,19 @@ BEGIN
         CASE WHEN o.order_delivered_customer_date <= o.order_estimated_delivery_date THEN 1 ELSE 0 END AS on_time
     FROM stg_order_items oi
     JOIN stg_orders o ON oi.order_id = o.order_id;
+    
+     
+   /* PRINT 'Calculate cumulative_revenue per customer...'+ CHAR(13) + CHAR(10);
+    * WITH ranked_customers AS (
+    SELECT *,
+           SUM(total_revenue_by_orderitems) OVER (ORDER BY total_revenue_by_orderitems DESC ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS cum_rev,
+           SUM(total_revenue_by_orderitems) OVER () AS total_rev
+    FROM dim_customers
+	)
+	UPDATE dc
+	SET dc.cum_revenue = rc.cum_rev,
+	    dc.cumulative_revenue_pct = rc.cum_rev * 1.0 / rc.total_rev
+	FROM dim_customers dc
+	JOIN ranked_customers rc
+	ON dc.customer_id = rc.customer_id;*/
 END;

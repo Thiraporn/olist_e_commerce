@@ -26,7 +26,7 @@
 	    select * ,  LAG(total_revenue) OVER (ORDER BY _year,_month)  AS prev_month_revenue
 	    from total_reveue_by_month
    )
-   select _year,_month,ROUND(total_revenue,4) 
+   select _year,_month,ROUND(total_revenue,4) current_total_revenue
    ,ROUND(isnull(prev_month_revenue,0),4) prev_month_revenue  
    ,ROUND(case when prev_month_revenue > 0 then (total_revenue - isnull(prev_month_revenue,0) )/isnull(prev_month_revenue,0)*100  else 0 end,2) MoM_Growth
    from current_prev_total_reveue
@@ -51,14 +51,15 @@
     
 --4. What are the top 10 best-selling products by number of orders?  สินค้า 10 รายการที่ถูกสั่งซื้อบ่อยที่สุด (จำนวน order มากที่สุด)  
   with revenue_by_orderid as(
-	   select   soi.product_id, sp.product_category_name
+	   select   soi.product_id, product_category_name_english 
 	   ,count(distinct so.order_id) _count_order
 	   ,rank() over(order by count(distinct so.order_id) desc) _rank_count_orderid
 	   from stg_orders so 
 	   join stg_order_items soi on  so.order_id  = soi.order_id 
 	   join stg_products sp on soi.product_id = sp.product_id 
+	   join stg_product_category_name_translation n  on   sp.product_category_name = n.product_category_name
 	   where order_approved_at is not null
-	   group by soi.product_id,sp.product_category_name
+	   group by soi.product_id, product_category_name_english
 	   
  )  
   select * from revenue_by_orderid  where _rank_count_orderid < 11 

@@ -230,20 +230,31 @@ due to the absence of logistics cost data.
   <summary>📊 View Dashboard Structure</summary>
 
   ### 🟦 Page 1 — Sales Overview
-  - Total Revenue  
-  - Total Orders  
-  - Average Order Value (AOV)  
-  - Monthly Revenue Trend  
 
-    <img src="dashboard/sales_overview.png" width="700"/>  
-
-  💡 Focus: Overall business performance
+   <img src="dashboard/sales_overview.png" width="700"/> 
+   
+   🛒 Key Insights
+   - Growth is driven by volume (more orders), not value per order
+   - Early-stage spikes in MoM are influenced by a low initial base
+   - Recent trends show slowing growth, which may indicate market saturation or maturity 
+   
 
   ### 🟩 Page 2 — Customer Insights
-      In progress.......
+      
+   <img src="dashboard/customer_insights.png" width="700"/> 
+   
+   🛒 Key Insights
+   - The majority 46% of customers are concentrated in a few states.Focus marketing efforts in states with the highest customer concentration.
+   - High-value customers (top 20%) drive a majority of revenue → prioritize retention and loyalty programs.
+   - Consider segment-based strategies, as revenue is fairly evenly split among segments but profitability differs.
+   - Customers display two main behaviors , followed by Many orders, lower revenue per order (frequent buyers) , Fewer orders, higher revenue per order (big spenders).Use order and revenue patterns to design targeted promotions and improve customer engagement.
 
   ### 🟨 Page 3 — Product Performance
-      In progress.......
+    <img src="dashboard/product_performance.png" width="700"/> 
+   
+   🛒 Key Insights
+   - The top 10 product categories by number of orders show that bed_bath_table, health_beauty, and sports_leisure are the most popular among customers.Focus on top categories with high orders and revenue for marketing campaigns.
+   - Products with many orders but lower revenue may indicate lower-priced items, while those with fewer orders but high revenue are high-value items.Monitor products with high revenue but fewer orders — potential high-margin opportunities. 
 
   ### 🟥 Page 4 — Delivery & Reviews
       In progress.......
