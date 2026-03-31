@@ -58,7 +58,7 @@
 	   join stg_order_items soi on  so.order_id  = soi.order_id 
 	   join stg_products sp on soi.product_id = sp.product_id 
 	   join stg_product_category_name_translation n  on   sp.product_category_name = n.product_category_name
-	   where order_approved_at is not null
+	   --where order_approved_at is not null
 	   group by soi.product_id, product_category_name_english
 	   
  )  
