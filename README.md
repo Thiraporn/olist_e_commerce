@@ -259,8 +259,12 @@ due to the absence of logistics cost data.
    - Products with many orders but lower revenue may indicate lower-priced items, while those with fewer orders but high revenue are high-value items.Monitor products with high revenue but fewer orders — potential high-margin opportunities. 
 
   ### 🟥 Page 4 — Delivery & Reviews
-      In progress.......
 
+   <img src="dashboard/delivery_reviews.png" width="700"/> 
+   
+   🛒 Key Insights
+   - Sellers keep high review scores even with slower delivery, but faster shipping can boost satisfaction; most customers give 5-star reviews.
+   
 </details> 
 
 <!-- ## 📚 Jupyter Notebook  

@@ -36,12 +36,13 @@
 --3. Which product categories generate the highest revenue?  หมวดสินค้าที่สร้างรายได้สูงสุดคืออะไร 
   --using window functions และ ANSI SQL  rank()
   with revenue_by_product_cat as(
-	   select  sp.product_category_name ,ROUND(SUM(soi.price +soi.freight_value ),2) as total_revenue 
+	   select  product_category_name_english,ROUND(SUM(soi.price +soi.freight_value ),2) as total_revenue 
 	   from stg_orders so 
 	   join stg_order_items soi on  so.order_id  = soi.order_id 
 	   join stg_products sp on soi.product_id = sp.product_id 
+	   join stg_product_category_name_translation n  on   sp.product_category_name = n.product_category_name
 	   where order_approved_at is not null
-	   group by sp.product_category_name 
+	   group by product_category_name_english
 	   
  ) ,revenue_by_product_cat_sort as (
 	 select * , rank() over(order by total_revenue desc) _rank_total_revenue
@@ -374,14 +375,15 @@ with sellers_delivered as (
   
   
 --18. Which product categories have the lowest customer satisfaction scores? หมวดสินค้าที่ได้รับ review ต่ำที่สุดคืออะไร
-	  select top 1 product_category_name ,count(sor.review_id ) count_reviews, AVG(sor.review_score) review_score_by_product_cate
+	  select top 1 n.product_category_name_english   ,count(sor.review_id ) count_reviews, AVG(sor.review_score) review_score_by_product_cate
 	  from stg_order_reviews sor 
 	  left join stg_orders so  on sor.order_id = so.order_id 
 	  left join (select distinct order_id,product_id  
 	             from stg_order_items   ) soi on  so.order_id  = soi.order_id 
 	  join stg_products sp on soi.product_id = sp.product_id 
+	  join stg_product_category_name_translation n  on   sp.product_category_name = n.product_category_name
 	  where  order_approved_at is not null 
-	  group by sp.product_category_name 
+	  group by  n.product_category_name_english  
 	  --prevent small sample bias
 	  --having count(sor.review_id ) > 50
 	  order by review_score_by_product_cate asc
@@ -389,15 +391,16 @@ with sellers_delivered as (
 	  
 	  
 --19️. What is the average price of products in each category? ราคาเฉลี่ยของสินค้าในแต่ละหมวด
-	  select product_category_name,ROUND(AVG(soi.price) ,2)  avg_price  ,COUNT(*) total_items_sold 
+	  select n.product_category_name_english ,ROUND(AVG(soi.price) ,2)  avg_price  ,COUNT(*) total_items_sold 
 	  from  stg_orders so  
 	  join  stg_order_items soi on  so.order_id  = soi.order_id 
 	  join stg_products sp on soi.product_id = sp.product_id  
+	  full outer join stg_product_category_name_translation n  on   sp.product_category_name = n.product_category_name
 	  where  order_approved_at is not null 
-	  group by sp.product_category_name 
+	  group by n.product_category_name_english  
 	  
-	  
-	  
+	  --select * from dim_products dp  where dp.product_category_name ='pc_gamer'
+	  --select * from stg_product_category_name_translation dp  where dp.product_category_name ='pc_gamer'
 	  
 --------------> not complted yet ----> need to grouping
 --20. Is there a relationship between shipping cost and customer review scores? freight_value มีผลต่อ review score หรือไม่

@@ -6,6 +6,11 @@ BEGIN
     SET NOCOUNT ON;
 
     -- 0. TRUNCATE Tables before Insert
+	IF OBJECT_ID('fact_orders', 'U') IS NOT NULL
+	BEGIN
+	    PRINT 'Truncating fact_orders...'+ CHAR(13) + CHAR(10);
+	    TRUNCATE TABLE fact_orders;
+	END
     IF OBJECT_ID('fact_sales', 'U') IS NOT NULL
 	BEGIN
 	    PRINT 'Truncating fact_sales...'+ CHAR(13) + CHAR(10);
@@ -107,8 +112,35 @@ BEGIN
             seller_state VARCHAR(50)
         );
     END
-
+    
     -- 2. Create Fact Table if can not find
+    IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'fact_orders') AND type='U')
+	BEGIN
+	    CREATE TABLE fact_orders (
+	        order_id VARCHAR(50) PRIMARY KEY,
+	        customer_id VARCHAR(50),
+	        order_date_id INT,
+	        order_date DATE,
+		    price DECIMAL(18,2),
+	        delivery_fee DECIMAL(18,2), 
+	        total_revenue_by_orderitems DECIMAL(18,2), 
+            total_revenue_by_payment DECIMAL(18,2),
+	
+	        delivery_time_days INT,
+	        estimated_delivery_days INT,
+	        delay_days INT,
+	        on_time INT,
+	        --quality INT,
+	        review_score FLOAT,
+	        created_at DATETIME DEFAULT GETDATE()
+	    );
+	END
+	 
+   
+ 
+   
+
+    
     IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'fact_sales') AND type='U')
     BEGIN
         CREATE TABLE fact_sales (
@@ -128,6 +160,7 @@ BEGIN
             on_time INT
         );
     END
+    
     PRINT 'Populating dim_customers...'+ CHAR(13) + CHAR(10);
     -- 3. Populate dim_customers
     INSERT INTO dim_customers (customer_id, customer_unique_id, customer_state, customer_city
@@ -214,12 +247,77 @@ BEGIN
         oi.freight_value AS delivery_fee,
         oi.price + oi.freight_value AS revenue,
         DATEDIFF(DAY, o.order_approved_at, o.order_estimated_delivery_date) AS estimated_delivery_days,
-        DATEDIFF(DAY, o.order_approved_at, o.order_delivered_customer_date) AS delivery_time_days,
-        CASE WHEN o.order_delivered_customer_date <= o.order_estimated_delivery_date THEN 1 ELSE 0 END AS on_time
+        CASE WHEN  o.order_status in ('delivered') THEN  DATEDIFF(DAY, o.order_approved_at, o.order_delivered_customer_date) ELSE -1 END AS delivery_time_days,
+        CASE WHEN  o.order_status in ('delivered') THEN  CASE WHEN o.order_delivered_customer_date <= o.order_estimated_delivery_date THEN 1 ELSE 0 END  ELSE -1 END AS on_time
     FROM stg_order_items oi
     JOIN stg_orders o ON oi.order_id = o.order_id;
-    
-     
+   
+    PRINT 'Populating fact_sales...'+ CHAR(13) + CHAR(10);
+    WITH item_summary AS (
+        SELECT
+        oi.order_id,
+        SUM(price ) AS price,
+        SUM(freight_value ) AS delivery_fee,
+        SUM(price + freight_value) AS total_revenue_by_orderitems  
+	    FROM stg_order_items oi
+	    JOIN stg_orders o ON oi.order_id = o.order_id
+		GROUP BY oi.order_id 
+	),
+	
+	payment_summary AS (
+	    SELECT
+	        order_id,
+	        SUM(payment_value) AS total_revenue_by_payment
+	    FROM stg_order_payments
+	    GROUP BY order_id
+	),
+	
+	review_summary AS (
+	    SELECT
+	        order_id,
+	        AVG(review_score) AS review_score 
+	    FROM stg_order_reviews
+	    GROUP BY order_id
+	)
+    INSERT INTO fact_orders (
+	    order_id,
+	    customer_id,
+	    order_date_id,
+	    order_date,
+	    price,
+        delivery_fee,
+	    total_revenue_by_orderitems, 
+        total_revenue_by_payment,
+	    delivery_time_days,
+	    estimated_delivery_days,
+	    --quality,
+	    delay_days,
+	    on_time,
+	    review_score
+	)
+	SELECT
+	    o.order_id,
+	    o.customer_id,
+	    CAST(CONVERT(VARCHAR(8), COALESCE(o.order_approved_at, o.order_purchase_timestamp), 112) AS INT),
+	    CAST(COALESCE(o.order_approved_at, o.order_purchase_timestamp) AS DATE),
+	    price,
+        delivery_fee,
+	    ISNULL(i.total_revenue_by_orderitems, 0),
+	    ISNULL(p.total_revenue_by_payment, 0),
+	 
+	    CASE WHEN  o.order_status in ('delivered') THEN  DATEDIFF(DAY, o.order_approved_at, o.order_delivered_customer_date) ELSE -1 END,
+	    DATEDIFF(DAY, o.order_approved_at, o.order_estimated_delivery_date),
+	
+	    DATEDIFF(DAY, o.order_estimated_delivery_date, o.order_delivered_customer_date), -- delay
+	    CASE WHEN  o.order_status in ('delivered') THEN  CASE WHEN o.order_delivered_customer_date <= o.order_estimated_delivery_date THEN 1 ELSE 0 END  ELSE -1 END ,  
+	    --quality,
+	    r.review_score 
+        
+	
+	FROM stg_orders o
+	LEFT JOIN item_summary i ON o.order_id = i.order_id
+	LEFT JOIN payment_summary p ON o.order_id = p.order_id
+	LEFT JOIN review_summary r ON o.order_id = r.order_id; 
    /* PRINT 'Calculate cumulative_revenue per customer...'+ CHAR(13) + CHAR(10);
     * WITH ranked_customers AS (
     SELECT *,
