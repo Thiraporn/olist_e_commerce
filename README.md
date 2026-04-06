@@ -234,10 +234,54 @@ due to the absence of logistics cost data.
    <img src="dashboard/sales_overview.png" width="700"/> 
    
    🛒 Key Insights
+   - Revenue growth driven by order volume, not AOV; early spikes due to low base; recent slowdown suggests market maturity.
+   
+
+  ### 🟩 Page 2 — Customer Insights
+      
+   <img src="dashboard/customer_insights.png" width="700"/> 
+   
+   🛒 Key Insights
+   - Most customers are in SP and RJ, revenue is evenly distributed across segments, and frequent orders drive high average CLV
+   - focus marketing on top states, retain high-value clients, and tailor promotions to buying behaviors.
+
+  ### 🟨 Page 3 — Product Performance
+      
+   <img src="dashboard/product_performance.png" width="700"/> 
+   
+   
+   🛒 Key Insights
+   - Top categories like bed_bath_table and health_beauty drive the highest order volume and should be prioritized for growth.
+Meanwhile, products with high revenue but fewer orders represent valuable high-margin opportunities to expand profitability.
+
+  ### 🟥 Page 4 — Delivery & Reviews
+
+   <img src="dashboard/delivery_reviews.png" width="700"/> 
+   
+   🛒 Key Insights
+   - Sellers keep high review scores even with slower delivery, but faster shipping can boost satisfaction; most customers give 5-star reviews.
+   
+</details> 
+ 
+<!-- ## 📊 Dashboard Layout  
+
+<details>
+  <summary>📊 View Dashboard Structure</summary>
+
+  ### 🟦 Page 1 — Sales Overview
+
+   <img src="dashboard/sales_overview.png" width="700"/> 
+   
+   🛒 Key Insights
    - Growth is driven by volume (more orders), not value per order
    - Early-stage spikes in MoM are influenced by a low initial base
    - Recent trends show slowing growth, which may indicate market saturation or maturity 
-   
+      
+     แนวโน้มจากกราฟ: 
+       รายได้รวมเติบโตตามจำนวนคำสั่งซื้อ (Volume-driven)
+       AOV ค่อนข้างคงที่ ไม่เพิ่มมาก → การเติบโตไม่ใช่เพราะราคาต่อออเดอร์สูงขึ้น
+       การเติบโต MoM ช่วงแรกสูงเพราะฐานน้อย → Spikes เริ่มต้น
+       หลัง ๆ การเติบโตชะลอลง → ตลาดเริ่มอิ่มตัวหรือเข้าสู่ช่วงโตช้า
 
   ### 🟩 Page 2 — Customer Insights
       
@@ -248,6 +292,12 @@ due to the absence of logistics cost data.
    - High-value customers (top 20%) drive a majority of revenue → prioritize retention and loyalty programs.
    - Consider segment-based strategies, as revenue is fairly evenly split among segments but profitability differs.
    - Customers display two main behaviors , followed by Many orders, lower revenue per order (frequent buyers) , Fewer orders, higher revenue per order (big spenders).Use order and revenue patterns to design targeted promotions and improve customer engagement.
+      
+     แนวโน้มจากกราฟ: 
+       ลูกค้าส่วนใหญ่ 46% กระจุกตัวอยู่ในไม่กี่รัฐ → ควรมุ่งเน้นการตลาดในรัฐที่มีลูกค้ามากที่สุด
+       ลูกค้ามีมูลค่าสูง (top 20%) สร้างรายได้หลัก → ให้ความสำคัญกับการรักษาลูกค้าและโปรแกรมความภักดี
+       ควรวางกลยุทธ์ตามเซ็กเมนต์ เนื่องจากรายได้กระจายค่อนข้างเท่า ๆ กัน แต่ความสามารถในการทำกำไรต่างกัน
+       ลูกค้าแสดงพฤติกรรมหลัก 2 แบบ: สั่งซื้อบ่อย รายได้ต่อออร์เดอร์ต่ำ (ผู้ซื้อบ่อย) และ สั่งซื้อน้อย รายได้ต่อออร์เดอร์สูง (ผู้ใช้จ่ายสูง) → ใช้รูปแบบคำสั่งซื้อและรายได้เพื่อออกโปรโมชั่นเฉพาะกลุ่มและเพิ่มการมีส่วนร่วมของลูกค้า
 
   ### 🟨 Page 3 — Product Performance
       
@@ -257,6 +307,45 @@ due to the absence of logistics cost data.
    🛒 Key Insights
    - The top 10 product categories by number of orders show that bed_bath_table, health_beauty, and sports_leisure are the most popular among customers.Focus on top categories with high orders and revenue for marketing campaigns.
    - Products with many orders but lower revenue may indicate lower-priced items, while those with fewer orders but high revenue are high-value items.Monitor products with high revenue but fewer orders — potential high-margin opportunities. 
+    แนวโน้มจากกราฟ: 
+       10 หมวดสินค้าที่มียอดสั่งซื้อสูงสุด แสดงให้เห็นว่า bed_bath_table, health_beauty และ sports_leisure  เป็นที่นิยมที่สุดในกลุ่มลูกค้า      ควรมุ่งเน้นการตลาดไปที่หมวดสินค้าท็อปที่มียอดสั่งซื้อและรายได้สูง
+       สินค้าที่มียอดสั่งซื้อสูงแต่รายได้น้อย อาจบ่งชี้ว่าสินค้าเป็นราคาต่ำ ในขณะที่สินค้าที่มียอดสั่งซื้อน้อยแต่รายได้สูง เป็นสินค้าที่มีมูลค่าสูง ควรติดตามสินค้าที่มีรายได้สูงแต่ยอดสั่งซื้อน้อย — เป็นโอกาสสำหรับกำไรสูง
+
+       สรุปภาพรวมจากแดชบอร์ดนี้ได้ดังนี้: 
+              1) หมวดหมู่ขายดี (ออเดอร์สูงสุด)
+
+              หมวด bed_bath_table, health_beauty, และ sports_leisure มียอดสั่งซื้อสูงที่สุด
+              → เป็นหมวด “ตัวทำยอด” ควรเน้นทำการตลาด โปรโมชัน และสต็อกสินค้าให้เพียงพอ
+
+              2) รายได้รวมตามหมวดหมู่
+
+              หมวดที่ทำรายได้สูง ได้แก่
+              health_beauty (~1.44M)
+              bed_bath_table (~1.24M)
+              watches_gifts (~1.31M)
+              → บางหมวดออเดอร์ไม่สูงมาก แต่สร้างรายได้ดี แปลว่าเป็นสินค้ามูลค่าสูง
+
+              3) ความสัมพันธ์ ออเดอร์ vs รายได้ (Scatter Plot)
+
+              สินค้าที่ “ออเดอร์เยอะ แต่รายได้ไม่สูงมาก”
+              → มักเป็นสินค้าราคาถูก (ขายปริมาณ)
+              สินค้าที่ “ออเดอร์น้อย แต่รายได้สูง”
+              → เป็นสินค้าราคาสูง / กำไรต่อชิ้นดี (high-value items)
+
+              4) Insight สำคัญ
+
+              ควร โฟกัส 2 กลุ่มหลัก
+              หมวดที่ “ออเดอร์สูง + รายได้สูง” → ตัวหลักของธุรกิจ
+              สินค้า “รายได้สูง แต่ออเดอร์น้อย” → โอกาสเพิ่มกำไร (ควรผลักดันเพิ่ม)
+              ใช้กลยุทธ์แยกกัน:
+              สินค้าราคาถูก → เน้น volume + โปรโมชัน
+              สินค้าราคาสูง → เน้น value + targeting ลูกค้าคุณภาพ
+
+              สรุปสั้นๆ:
+
+              Top categories = ตัวทำยอด
+              High revenue but low orders = โอกาสกำไรสูง
+              ควรทำการตลาดแบบแยกกลยุทธ์ตามประเภทสินค้า
 
   ### 🟥 Page 4 — Delivery & Reviews
 
@@ -265,7 +354,7 @@ due to the absence of logistics cost data.
    🛒 Key Insights
    - Sellers keep high review scores even with slower delivery, but faster shipping can boost satisfaction; most customers give 5-star reviews.
    
-</details> 
+</details>   -->
 
 <!-- ## 📚 Jupyter Notebook  
 <details>
