@@ -1,4 +1,5 @@
 # E-commerce Sales Analysis 
+![status](https://img.shields.io/badge/status-complete-brightgreen)
  
 This project builds on my SQL skills and applies them to real-world business analysis, focusing on transforming data into meaningful insights that support data-driven decision-making in an e-commerce environment.
  
