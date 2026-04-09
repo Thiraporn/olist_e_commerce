@@ -99,7 +99,19 @@ This project builds on my SQL skills and applies them to real-world business ana
 ## 📌 SQL Analysis  
 <details>
     <summary> 20 Business Questions</summary>
-    
+
+  <p>
+    This section contains SQL queries used to answer key business questions such as customer behavior, revenue trends, and product performance.
+  </p>
+
+  <p>
+    👉 <a href="https://github.com/Thiraporn/olist_e_commerce/blob/main/analysis-sql/analysis_sql.sql" target="_blank">
+      Explore SQL Analysis
+    </a>
+  </p>
+
+
+       
    ### 🟦 Sales Performance 
      - 1. What is the total revenue generated each month?    
      - 2️. How does monthly revenue change over time (Month-over-Month growth)?
