@@ -19,49 +19,11 @@ This project builds on my SQL skills and applies them to real-world business ana
    
 
 ## 🏗️ Data Architecture Diagram  
+ 
 <details>
-       <summary> Run ETL Pipeline</summary>    
-                            
-                                          +--------------+
-                                          |  Raw CSV     |
-                                          | (Olist Data) |
-                                          +--------------+
-                                                 │
-                                                 ▼
-                                          +--------------+
-                                          |   Extract    |
-                                          |  Python ETL  |
-                                          +--------------+
-                                                 │
-                                                 ▼
-                                          +--------------+
-                                          |   Transform  |
-                                          | Data Cleaning|
-                                          +--------------+
-                                                 │
-                                                 ▼
-                                          +--------------+
-                                          |  Staging DB  |
-                                          | SQL Server   |
-                                          +--------------+
-                                                 │
-                                                 ▼
-                                          +--------------+
-                                          | Star Schema  |
-                                          +--------------+
-                                                 │
-                                                 ▼
-                                          +--------------+
-                                          | SQL Analysis |
-                                          +--------------+
-                                                 │
-                                                 ▼
-                                          +--------------+
-                                          |  Dashboard   |
-                                          | Power BI / BI|
-                                          +--------------+
-    
-</details> 
+  <summary> Run ETL Pipeline</summary> 
+     <img src="diagrams/Data-Architecture-Diagram.png" width="700"/> 
+</details>
 
 ## 🧩 ER Diagram (Staging Table) 
 <details>
